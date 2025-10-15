@@ -1,0 +1,222 @@
+
+
+
+.apps-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin: 15px 0;
+  padding: 0;
+}
+
+.app-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid rgba(229, 57, 53, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.app-logo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(229, 57, 53, 0.15);
+  border-color: var(--vermelho-fastnet);
+}
+
+.app-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.app-logo-item:hover .app-logo {
+  transform: scale(1.1);
+}
+
+.app-logo-item span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.2;
+  margin-top: auto;
+}
+
+
+.tier-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.tier-features span {
+  background: rgba(229, 57, 53, 0.1);
+  color: var(--vermelho-fastnet);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tier-features span:hover {
+  background: rgba(229, 57, 53, 0.2);
+  transform: translateY(-1px);
+}
+
+
+.apps-info-section {
+  margin-top: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.apps-info-section h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.app-tier {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.app-tier:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.app-tier h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(229, 57, 53, 0.1);
+}
+
+
+@media (max-width: 768px) {
+  .apps-logos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+  }
+
+  .app-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .app-logo-item span {
+    font-size: 0.7rem;
+  }
+
+  .app-logo-item {
+    padding: 8px;
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .app-tier {
+    padding: 20px;
+  }
+
+  .apps-info-section {
+    padding: 20px;
+    margin-top: 30px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .apps-logos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 8px;
+  }
+
+  .app-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .app-logo-item span {
+    font-size: 0.65rem;
+  }
+
+  .app-logo-item {
+    padding: 6px;
+  }
+
+  .apps-info-section {
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  .apps-info-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .app-tier {
+    padding: 15px;
+  }
+
+  .app-tier h4 {
+    font-size: 1rem;
+  }
+}
+
+
+@keyframes logoLoad {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-logo-item {
+  animation: logoLoad 0.5s ease-out forwards;
+}
+
+
+.app-logo-item:nth-child(1) { animation-delay: 0.1s; }
+.app-logo-item:nth-child(2) { animation-delay: 0.2s; }
+.app-logo-item:nth-child(3) { animation-delay: 0.3s; }
+.app-logo-item:nth-child(4) { animation-delay: 0.4s; }
+.app-logo-item:nth-child(5) { animation-delay: 0.5s; }
+.app-logo-item:nth-child(6) { animation-delay: 0.6s; }
+.app-logo-item:nth-child(7) { animation-delay: 0.7s; }
+.app-logo-item:nth-child(8) { animation-delay: 0.8s; }

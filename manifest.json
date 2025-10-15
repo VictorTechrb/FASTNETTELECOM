@@ -1,0 +1,22 @@
+{
+  "name": "Fastnet Telecom",
+  "short_name": "Fastnet",
+  "description": "Internet de Alta Velocidade em Sergipe",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e53935",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/fastsimbol.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["telecommunications", "internet", "business"],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

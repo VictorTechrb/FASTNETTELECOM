@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato | Atendimento | Fastnet Telecom Sergipe</title>
+  
+  
+  <meta name="description" content="Contato Fastnet Telecom Sergipe: WhatsApp (79) 3045-4880, atendimento presencial e online. Contrate internet fibra óptica agora!" />
+  <meta name="author" content="Fastnet Telecom" />
+  <meta name="robots" content="index, follow" />
+  
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contato | Fastnet Telecom" />
+  <meta property="og:description" content="Entre em contato conosco. Atendimento em Sergipe com internet de qualidade." />
+  <meta property="og:url" content="https://fastnettelecom.com/pages/contact.html" />
+  <meta property="og:image" content="https://fastnettelecom.com/assets/images/capa.webp" />
+  
+  
+  <link rel="canonical" href="https://fastnettelecom.com/pages/contact.html" />
+  
+  <link rel="icon" href="../assets/images/fastsimbol.ico" />
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  
+  <link rel="stylesheet" href="../assets/css/variables.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/utilities.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/contact.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+
+</head>
+<body>
+
+  
+  <header id="navbar-placeholder"></header>
+
+  <main>
+    <section class="contact-section">
+      <h1>Entre em Contato Conosco</h1>
+      <p>Preencha o formulário abaixo e envie sua mensagem diretamente para nosso WhatsApp 📲</p>
+
+      <form id="whatsapp-form" action="#" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required autocomplete="name" aria-label="Nome completo" />
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required autocomplete="email" aria-label="Endereço de e-mail" />
+
+        <label for="subject">Assunto:</label>
+        <select id="subject" name="subject" required aria-label="Assunto da mensagem">
+          <option value="" disabled selected>Selecione um assunto</option>
+          <option value="Suporte Técnico">Suporte Técnico</option>
+          <option value="Financeiro">Financeiro</option>
+          <option value="Solicitar Instalação">Solicitar Instalação</option>
+          <option value="Outros">Outros</option>
+        </select>
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="5" required aria-label="Mensagem"></textarea>
+
+        <button type="submit"><i class="fab fa-whatsapp"></i> Enviar via WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+
+
+  <script>
+    document.getElementById('whatsapp-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const phone = '557930454880'; // Número da empresa no WhatsApp com DDI
+      const text = `Olá, meu nome é ${name}%0AAssunto: ${subject}%0AEmail: ${email}%0AMensagem: ${message}`;
+      const url = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
+
+      alert('Você será redirecionado para o WhatsApp. Clique em "Enviar" na conversa para concluir.');
+      window.open(url, '_blank');
+    });
+  </script>
+
+  <script src="/assets/js/navbar.js"></script>
+</body>
+
+  
+  <footer id="footer-placeholder"></footer>
+
+  
+  <!-- Script de navegação universal -->
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/performance.js"></script>
+
+</body>
+</html>

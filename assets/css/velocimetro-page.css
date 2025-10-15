@@ -1,0 +1,102 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Correção específica para logo na navbar em páginas de subpasta */
+#logo-img {
+  content: url('../images/fastbranco.webp');
+  max-height: 40px;
+  width: auto;
+}
+
+/* Fallback para caso a correção JS não funcione */
+.navbar .logo img {
+  content: url('../images/fastbranco.webp') !important;
+}
+
+:root {
+  --primary-red: #e02121;
+  --text-primary: #333;
+  --background-light: #f9f9f9;
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #f9f9f9 0%, #e8e8e8 100%);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100vh;
+  border: none;
+  border-radius: 0;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-include] {
+  display: block;
+  transition: var(--transition);
+}
+
+
+main {
+  position: relative;
+  background: var(--background-light);
+  min-height: 100vh;
+}
+
+main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-red) 0%, #ff4444 100%);
+  z-index: 1000;
+}
+
+
+iframe[src=""] {
+  background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+              linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+              linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 0 0, 0 10px, 10px -10px, -10px 0px; }
+  100% { background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px; }
+}
+
+
+@media (max-width: 768px) {
+  iframe {
+    height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  iframe {
+    height: calc(100vh - 80px);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

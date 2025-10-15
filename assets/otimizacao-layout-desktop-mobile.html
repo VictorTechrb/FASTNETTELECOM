@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTIMIZAÇÃO: Layout Responsivo Desktop vs Mobile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+        }
+        
+        .otimizacao-container {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .teste-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        
+        .codigo-container {
+            background: #f8f9fa;
+            border: 2px solid #007bff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .teste-title {
+            color: #e02121;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e02121;
+            padding-bottom: 8px;
+        }
+        
+        .codigo {
+            background: #282c34;
+            color: #abb2bf;
+            border: 1px solid #3e4451;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+        
+        .btn-teste {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-teste:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .icon {
+            font-size: 1.5em;
+            margin-right: 8px;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-list li:before {
+            content: "✅ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .desktop-mobile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .desktop {
+            background: #cce5ff;
+            border: 2px solid #0066cc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .mobile {
+            background: #ffe6cc;
+            border: 2px solid #ff8c00;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .destaque {
+            background: #fff3cd;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #856404;
+        }
+        
+        .problema {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .solucao {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🖥️📱 OTIMIZAÇÃO CONCLUÍDA</h1>
+        <p>Layout Inteligente: Desktop vs Mobile</p>
+        <span class="status">✅ SEPARAÇÃO PERFEITA IMPLEMENTADA</span>
+    </div>
+
+    <div class="otimizacao-container">
+        <h2><span class="icon">🎯</span>Objetivo da Otimização</h2>
+        <p>Aplicar os ajustes de responsividade para os botões <strong>SOMENTE</strong> em telas de celular, mantendo o layout original para computadores.</p>
+        
+        <div class="problema">
+            <h4>❌ Problema Anterior:</h4>
+            <p>As regras de posicionamento fixo poderiam afetar o layout desktop, causando comportamento inesperado em telas grandes.</p>
+        </div>
+        
+        <div class="solucao">
+            <h4>✅ Solução Implementada:</h4>
+            <p>Isolamento completo das regras CSS usando media queries específicas, garantindo que cada dispositivo tenha o layout adequado.</p>
+        </div>
+    </div>
+
+    <div class="codigo-container">
+        <h2 class="teste-title">🖥️ Código CSS Desktop (Fora das Media Queries)</h2>
+        
+        <h4>✅ Estilos Padrão para Desktop - Layout Original:</h4>
+        <div class="codigo">
+/* ===== CONTÊINER DOS BOTÕES - LAYOUT DESKTOP PADRÃO ===== */
+.apps-buttons-container-fixed {
+  /* Desktop: layout original sem posicionamento fixo */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: stretch;
+  /* Garantir que não há posicionamento fixo no desktop */
+  position: relative;
+  width: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  z-index: auto;
+}
+
+/* Estilos dos botões para desktop */
+.apps-buttons-container-fixed .modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.apps-buttons-container-fixed .apps-clear-btn,
+.apps-buttons-container-fixed .apps-confirm-btn,
+.apps-buttons-container-fixed .apps-cancel-btn {
+  width: auto;
+  max-width: none;
+  min-height: auto;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+}
+        </div>
+    </div>
+
+    <div class="codigo-container">
+        <h2 class="teste-title">📱 Código CSS Mobile (Dentro das Media Queries)</h2>
+        
+        <h4>📱 Regras para Tablets e Celulares (≤ 768px):</h4>
+        <div class="codigo">
+@media (max-width: 768px) {
+  /* ===== FORÇAR POSICIONAMENTO FIXO DOS BOTÕES EM MOBILE ===== */
+  .apps-buttons-container-fixed {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: white !important;
+    padding: 15px 20px 20px 20px !important;
+    border-top: 3px solid #e02121 !important;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15) !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  
+  /* Botões otimizados para mobile */
+  .apps-buttons-container-fixed .apps-confirm-btn,
+  .apps-buttons-container-fixed .apps-cancel-btn {
+    width: 100% !important;
+    max-width: 160px !important;
+    min-height: 52px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    padding: 16px 12px !important;
+  }
+}
+        </div>
+        
+        <h4>📱 Ajustes Finos para Celulares Pequenos (≤ 480px):</h4>
+        <div class="codigo">
+@media (max-width: 480px) {
+  /* Ajustes finos para botões em telas muito pequenas */
+  .apps-buttons-container-fixed {
+    padding: 12px 15px 18px 15px !important;
+  }
+  
+  .apps-buttons-container-fixed .apps-confirm-btn,
+  .apps-buttons-container-fixed .apps-cancel-btn {
+    min-height: 56px !important;
+    font-size: 0.95rem !important;
+    padding: 18px 10px !important;
+    font-weight: 800 !important;
+  }
+}
+        </div>
+    </div>
+
+    <div class="teste-container">
+        <h2 class="teste-title">🔄 Comparação Desktop vs Mobile</h2>
+        
+        <div class="desktop-mobile">
+            <div class="desktop">
+                <h4>🖥️ DESKTOP (> 768px)</h4>
+                <ul class="feature-list">
+                    <li>Layout original preservado</li>
+                    <li>position: relative (normal)</li>
+                    <li>Botões no footer do modal</li>
+                    <li>width: auto (flexível)</li>
+                    <li>z-index: auto (padrão)</li>
+                    <li>Padding normal (12px 24px)</li>
+                    <li>Background transparente</li>
+                </ul>
+            </div>
+            
+            <div class="mobile">
+                <h4>📱 MOBILE (≤ 768px)</h4>
+                <ul class="feature-list">
+                    <li>Botões fixos na parte inferior</li>
+                    <li>position: fixed !important</li>
+                    <li>bottom: 0 !important</li>
+                    <li>width: 100% !important</li>
+                    <li>z-index: 9999 !important</li>
+                    <li>Padding otimizado (touch-friendly)</li>
+                    <li>Background branco + sombra</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="teste-container">
+        <h2 class="teste-title">🛠️ Estrutura da Otimização</h2>
+        
+        <h3><span class="icon">📐</span>Breakpoints Implementados</h3>
+        <ul class="feature-list">
+            <li><strong>Desktop (> 768px):</strong> Layout original, sem posicionamento fixo</li>
+            <li><strong>Tablet/Mobile (≤ 768px):</strong> Botões fixos com styling completo</li>
+            <li><strong>Mobile Pequeno (≤ 480px):</strong> Ajustes finos de padding e tamanho</li>
+        </ul>
+        
+        <h3><span class="icon">🔧</span>Técnicas Utilizadas</h3>
+        <ul class="feature-list">
+            <li><strong>Media Queries Específicas:</strong> Isolamento completo por resolução</li>
+            <li><strong>!important Strategy:</strong> Força aplicação em mobile, ignorado em desktop</li>
+            <li><strong>Propriedades Revertidas:</strong> Desktop usa valores normais (relative, auto, transparent)</li>
+            <li><strong>Cascata Inteligente:</strong> Mobile sobrescreve apenas quando necessário</li>
+        </ul>
+        
+        <h3><span class="icon">⚡</span>Benefícios da Otimização</h3>
+        <ul class="feature-list">
+            <li><strong>Performance:</strong> Desktop não carrega estilos mobile desnecessários</li>
+            <li><strong>Manutenibilidade:</strong> Código organizado por dispositivo</li>
+            <li><strong>Flexibilidade:</strong> Fácil ajustar cada plataforma independentemente</li>
+            <li><strong>Compatibilidade:</strong> Funciona em todos os navegadores modernos</li>
+        </ul>
+    </div>
+
+    <div class="teste-container">
+        <h2 class="teste-title">🧪 Como Testar a Otimização</h2>
+        
+        <h3><span class="icon">🖥️</span>Teste Desktop (> 768px):</h3>
+        <ol>
+            <li><strong>Abra o sistema em tela grande</strong> (notebook/desktop)</li>
+            <li><strong>Abra o modal A la Carte</strong> clicando nos botões APP's</li>
+            <li><strong>Verifique:</strong> Botões permanecem no footer normal do modal</li>
+            <li><strong>Resultado esperado:</strong> Layout original preservado</li>
+        </ol>
+        
+        <h3><span class="icon">📱</span>Teste Mobile (≤ 768px):</h3>
+        <ol>
+            <li><strong>Abra DevTools (F12)</strong> → Ícone de dispositivo móvel</li>
+            <li><strong>Selecione resolução mobile</strong> (iPhone, Android, etc.)</li>
+            <li><strong>Abra o modal A la Carte</strong> e role o conteúdo</li>
+            <li><strong>Verifique:</strong> Botões sempre fixos na parte inferior</li>
+            <li><strong>Resultado esperado:</strong> Posicionamento fixo funcional</li>
+        </ol>
+        
+        <button class="btn-teste" onclick="abrirSistemaDesktop()">
+            <span class="icon">🖥️</span>Testar Layout Desktop
+        </button>
+        
+        <button class="btn-teste" onclick="abrirSistemaMobile()">
+            <span class="icon">📱</span>Testar Layout Mobile
+        </button>
+        
+        <div id="resultado-teste" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        function abrirSistemaDesktop() {
+            document.getElementById('resultado-teste').innerHTML = `
+                <div style="background: #cce5ff; padding: 20px; border-radius: 8px; border: 2px solid #0066cc;">
+                    <h4>🖥️ Teste Desktop:</h4>
+                    <p><strong>Instruções:</strong></p>
+                    <ol>
+                        <li>Maximize sua janela do navegador (> 768px)</li>
+                        <li>Acesse: <a href="index.html" target="_blank">Sistema Fastnet</a></li>
+                        <li>Clique em qualquer botão "APP's" nos planos</li>
+                        <li>Observe: botões devem estar no footer normal, não fixos</li>
+                    </ol>
+                    <p><strong>✅ Resultado esperado:</strong> Layout original preservado, sem posicionamento fixo!</p>
+                </div>
+            `;
+        }
+        
+        function abrirSistemaMobile() {
+            document.getElementById('resultado-teste').innerHTML = `
+                <div style="background: #ffe6cc; padding: 20px; border-radius: 8px; border: 2px solid #ff8c00;">
+                    <h4>📱 Teste Mobile:</h4>
+                    <p><strong>Instruções:</strong></p>
+                    <ol>
+                        <li>Pressione F12 → Clique no ícone de celular</li>
+                        <li>Selecione iPhone/Android (< 768px)</li>
+                        <li>Acesse: <a href="index.html" target="_blank">Sistema Fastnet</a></li>
+                        <li>Abra modal APP's e role o conteúdo</li>
+                        <li>Observe: botões sempre fixos na parte inferior</li>
+                    </ol>
+                    <p><strong>✅ Resultado esperado:</strong> Botões sempre visíveis e fixos no bottom!</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

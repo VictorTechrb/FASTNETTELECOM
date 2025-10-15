@@ -1,0 +1,305 @@
+
+
+
+.banner-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #f8f9fa;
+}
+
+.banner.swiper-container {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+
+@media (min-width: 769px) {
+  .banner-container {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f1f3f4 0%, #e8eaed 50%, #f1f3f4 100%);
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner.swiper-container {
+    width: 85%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 24px;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.12),
+      0 4px 16px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .banner.swiper-container:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+      0 16px 48px rgba(0, 0, 0, 0.18),
+      0 8px 24px rgba(0, 0, 0, 0.12),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .banner-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
+  }
+
+  .swiper-slide {
+    height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  
+  /* --- SETAS (ESTILO FANTASMA) --- */
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 56px;
+    height: 56px;
+    background: transparent; /* Fundo transparente padrão */
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Borda sutil definindo área */
+    box-shadow: none; /* Sem sombra inicial */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    margin-top: -28px;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.95); /* Vidro branco somente no hover */
+    transform: scale(1.12);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+    border-color: transparent; /* Some a borda para ficar sólido */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 22px;
+    color: #ffffff; /* Seta branca p/ contraste sobre a imagem */
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+  }
+
+  .swiper-button-next:hover::after,
+  .swiper-button-prev:hover::after {
+    color: #333; /* Escurece no fundo branco */
+  }
+
+  .swiper-pagination {
+    bottom: 30px;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .swiper-pagination-bullet {
+    width: 18px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+    opacity: 0.8;
+    aspect-ratio: 1 / 1; 
+  }
+
+  .swiper-pagination-bullet:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .banner-container {
+    padding: 25px 15px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner.swiper-container {
+    width: 95%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+  }
+
+  .swiper-slide {
+    height: auto;
+    border-radius: 20px;
+  }
+
+  /* --- SETAS TABLET (HERDA ESTILO FANTASMA, AJUSTA TAMANHO) --- */
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.12);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.2);
+    border-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+
+  .swiper-button-next:hover::after,
+  .swiper-button-prev:hover::after {
+    color: #333;
+  }
+
+  .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    margin: 0 6px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .banner-container {
+    padding: 15px 10px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+    min-height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner.swiper-container {
+    width: 95%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+  }
+
+  .swiper-slide {
+    height: auto;
+    border-radius: 16px;
+  }
+
+  /* --- SETAS MOBILE --- */
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    border-color: transparent;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+
+  .swiper-button-next:hover::after,
+  .swiper-button-prev:hover::after {
+    color: #333;
+  }
+
+  .swiper-pagination {
+    bottom: 20px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+  }
+
+  .swiper-pagination-bullet-active {
+    transform: scale(1.3);
+  }
+}

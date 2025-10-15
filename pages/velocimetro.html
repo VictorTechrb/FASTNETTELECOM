@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Velocímetro | Teste de Velocidade da Internet | Fastnet Telecom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+    <meta name="description" content="Teste velocidade internet grátis! Velocímetro oficial Fastnet Telecom. Verifique sua conexão fibra óptica de forma rápida e precisa." />
+    <meta name="author" content="Fastnet Telecom" />
+    <meta name="robots" content="index, follow" />
+    
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Teste de Velocidade | Velocímetro Fastnet" />
+    <meta property="og:description" content="Teste sua velocidade de internet com precisão. Velocímetro oficial da Fastnet Telecom." />
+    <meta property="og:url" content="https://site.fastnettelecom.com/velocimetro" />
+    <meta property="og:image" content="https://fastnettelecom.com/assets/images/speedometer-icon.webp" />
+    
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Teste de Velocidade | Velocímetro Fastnet" />
+    <meta name="twitter:description" content="Teste sua velocidade de internet com precisão" />
+    
+    
+    <link rel="canonical" href="https://site.fastnettelecom.com/velocimetro" />
+    
+    <link rel="icon" href="../assets/images/fastsimbol.ico" />
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    <link rel="stylesheet" href="../assets/css/variables.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/utilities.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/velocimetro-page.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+
+    <script>
+        // Script simplificado apenas para carregamento do velocímetro específico
+        document.addEventListener('DOMContentLoaded', function() {
+            // A navegação será tratada pelo navigation.js
+            console.log('Página do velocímetro carregada');
+            
+            // Forçar correção da logo após carregamento
+            setTimeout(function() {
+                const logoImg = document.getElementById('logo-img');
+                if (logoImg) {
+                    const currentSrc = logoImg.getAttribute('src');
+                    if (currentSrc && currentSrc.includes('./assets/')) {
+                        logoImg.src = '../assets/images/fastbranco.webp';
+                        logoImg.setAttribute('src', '../assets/images/fastbranco.webp');
+                        console.log('Logo corrigida manualmente');
+                    }
+                }
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+
+    
+    <header data-include="../includes/navbar.html"></header>
+
+    
+    <main>
+        <div style="background: linear-gradient(135deg, #e02121, #ff4444); padding: 40px 20px; text-align: center; margin-bottom: 20px;">
+            <h1 style="color: white; font-size: 2.5rem; margin: 0; font-weight: 700;">
+                <i class="fas fa-tachometer-alt" style="margin-right: 15px;"></i>Velocímetro
+            </h1>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin: 10px 0 0 0;">Teste a velocidade da sua internet</p>
+        </div>
+        <iframe src="https://speedixc.fastnettelecom.com/" title="Teste de Velocidade - Fastnet" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+    </main>
+
+    
+    <footer data-include="../includes/footer.html"></footer>
+
+    <!-- Script de navegação universal -->
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/performance.js"></script>
+
+</body>
+</html>

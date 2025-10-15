@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ISP", 
+  "name": "Fastnet Telecom",
+  "alternateName": ["Fastnettelecom", "Fastnet"],
+  "description": "A melhor internet do estado de Sergipe! Fibra óptica, FastnetPlay e conexão de alta velocidade em Ribeirópolis.",
+  "url": "https://fastnettelecom.com",
+  "logo": "https://fastnettelecom.com/assets/img/logo.svg", 
+  "telephone": "+55-79-3045-4880",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "317, R. Felino Bonfim, 183, Ribeirópolis - SE, 49530-000",
+    "addressLocality": "Ribeirópolis",
+    "addressRegion": "SE",
+    "addressCountry": "BR",
+    "postalCode": "49530-000"
+},
+  "areaServed": [
+    "Sergipe",
+    "Ribeirópolis",
+    "Aquidabã",
+    "Capela",
+    "Carmópolis", 
+    "Nossa Senhora das Dores",
+    "Frei Paulo",
+    "Japaratuaba",
+    "Monte Alegre",
+    "Nossa Senhora da Glória",
+    "Poço Redondo",
+    "Porto da Folha",
+    "Nossa Senhora do Socorro"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Planos de Internet Fibra Óptica",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Plano 300MB Básico",
+        "description": "Plano ideal para navegação básica e streaming com roteador não incluso.",
+        "price": "65.00",
+        "priceCurrency": "BRL"
+      },
+      {
+        "@type": "Offer",
+        "name": "Plano 500MB Conecta",
+        "description": "Conexão de média velocidade com roteador Wi-Fi de última geração incluso.",
+        "price": "80.00",
+        "priceCurrency": "BRL"
+      },
+      {
+        "@type": "Offer",
+        "name": "Plano 700MB Plus",
+        "description": "Internet premium, roteador incluso e o melhor desempenho para múltiplos dispositivos.",
+        "price": "89.00", 
+        "priceCurrency": "BRL"
+      },
+      {
+        "@type": "Offer",
+        "name": "Plano 1GB Premium",
+        "description": "Velocidade máxima de 1 Gigabyte (1000MB) e roteador incluso para a melhor performance.",
+        "price": "119.00",
+        "priceCurrency": "BRL"
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "150"
+  },
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Cliente Fastnet"
+    },
+    "reviewBody": "A melhor internet de Sergipe! Conexão estável e suporte excelente."
+  }
+}
