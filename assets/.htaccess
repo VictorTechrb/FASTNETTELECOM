@@ -62,18 +62,9 @@
     ExpiresDefault "access plus 1 week"
 </IfModule>
 
-# ===== REDIRECIONAMENTOS CANÔNICOS (Padrão Ouro) =====
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # 1. FORÇAR HTTPS (Redirecionamento CRÍTICO para segurança)
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-    # 2. FORÇAR A VERSÃO SEM WWW (Canonicalização da URL)
-    RewriteCond %{HTTP_HOST} ^www\.site\.fastnettelecom\.com [NC]
-    RewriteRule ^(.*)$ https://site.fastnettelecom.com/$1 [L,R=301]
-</IfModule>
+# NOTE: O bloco canônico de redirecionamento foi consolidado no `.htaccess` da raiz
+# para evitar regras duplicadas e possíveis loops. Mantenha aqui apenas diretivas
+# específicas de pasta, se necessário.
 
 # ===== SEGURANÇA E HEADERS =====
 <IfModule mod_headers.c>

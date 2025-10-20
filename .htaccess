@@ -1,3 +1,25 @@
+# ----------------------------------------------------------------------
+# INÍCIO DO BLOCO CANÔNICO DE REDIRECIONAMENTO (MELHOR PRÁTICA)
+# Garante HTTPS e Domínio Único, evitando CONTEÚDO MISTO e LOOPS.
+# ----------------------------------------------------------------------
+
+# Ativa o módulo de reescrita (Se já existir, não precisa repetir)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. FORÇA SEM O WWW (Se a URL começar com www, redireciona)
+    RewriteCond %{HTTP_HOST} ^www\.site\.fastnettelecom\.com [NC]
+    RewriteRule ^(.*)$ https://site.fastnettelecom.com/$1 [L,R=301]
+
+    # 2. FORÇA HTTPS (Se não for HTTPS, redireciona para a versão segura)
+    # Importante: Esta regra deve vir depois da regra do WWW
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+</IfModule>
+# FIM DO BLOCO CANÔNICO DE REDIRECIONAMENTO
+# ----------------------------------------------------------------------
+
 # Fastnet Telecom - Otimizações de Performance e SEO
 # Arquivo .htaccess para melhorar velocidade, SEO e experiência do usuário
 
@@ -62,18 +84,7 @@
     ExpiresDefault "access plus 1 week"
 </IfModule>
 
-# ===== REDIRECIONAMENTOS CANÔNICOS (Padrão Ouro) =====
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # 1. FORÇAR HTTPS (Redirecionamento CRÍTICO para segurança)
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-    # 2. FORÇAR A VERSÃO SEM WWW (Canonicalização da URL)
-    RewriteCond %{HTTP_HOST} ^www\.site\.fastnettelecom\.com [NC]
-    RewriteRule ^(.*)$ https://site.fastnettelecom.com/$1 [L,R=301]
-</IfModule>
+# NOTE: As regras de redirecionamento canônico foram consolidadas no topo do arquivo
 
 # ===== SEGURANÇA E HEADERS =====
 <IfModule mod_headers.c>
