@@ -403,6 +403,7 @@ function setupNavbarListeners() {
     'nav-support': () => goToPage('support'),
     'nav-contact': () => goToPage('contact'),
     'nav-velocimetro': () => goToPage('velocimetro'),
+    'nav-contratos': () => goToPage('support', '#documents'),
     'nav-security': () => goToPage('support', '#documents')
   };
 

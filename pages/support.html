@@ -861,6 +861,42 @@
       });
     }
 
+    // Handle URL hash navigation on page load
+    function handleHashNavigation() {
+      const hash = window.location.hash;
+      
+      if (hash) {
+        console.log(`🔗 Hash detectado na URL: ${hash}`);
+        
+        setTimeout(() => {
+          const targetId = hash.substring(1);
+          const targetSection = document.getElementById(targetId);
+          const navItems = document.querySelectorAll('.support-nav-item');
+          
+          if (targetSection) {
+            // Update active nav item
+            navItems.forEach(nav => {
+              nav.classList.remove('active');
+              if (nav.getAttribute('href') === hash) {
+                nav.classList.add('active');
+              }
+            });
+            
+            // Smooth scroll to section
+            const navHeight = document.querySelector('.support-nav')?.offsetHeight || 0;
+            const targetPosition = targetSection.offsetTop - navHeight - 20;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            console.log(`✅ Navegado para seção: ${targetId}`);
+          }
+        }, 500); // Wait for page to fully load
+      }
+    }
+
     // Main Initialization
     function initializeSupportPage() {
       console.log('🚀 Inicializando página de suporte...');
@@ -874,6 +910,7 @@
       initializePerformanceMonitoring();
       initializeAccessibility();
       initializeErrorHandling();
+      handleHashNavigation();
       
       console.log('✅ Página de suporte inicializada com sucesso!');
     }
