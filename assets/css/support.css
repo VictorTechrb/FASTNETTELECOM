@@ -3,6 +3,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Correção: Remove espaço branco entre navbar e banner vermelho */
+body.support-page {
+  margin-top: 0 !important;
+  padding-top: 55px !important; /* Apenas o necessário para a navbar fixa */
+}
+
+/* Garante que o header/navbar não adicione margem extra */
+#navbar-placeholder,
+header.navbar {
+  margin-bottom: 0 !important;
+}
+
 /* Correção específica para logo na navbar em páginas de subpasta */
 #logo-img {
   content: url('../images/fastbranco.webp');
@@ -32,7 +44,9 @@
 .support-page {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   min-height: 100vh;
-  padding-top: 70px;
+  /* Removido padding-top excessivo - o body já tem padding-top: 55px para a navbar */
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
 .support-hero {
@@ -42,6 +56,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  /* Garante que o banner comece logo após a navbar fixa */
+  margin-top: 0 !important;
 }
 
 .support-hero::before {
@@ -58,6 +74,12 @@
 .support-hero .container {
   position: relative;
   z-index: 1;
+}
+
+.support-hero .hero-content {
+  /* Remove qualquer margem inline que possa ter sido adicionada */
+  margin-top: 0 !important;
+  padding-top: 0;
 }
 
 .support-hero h1 {
@@ -349,8 +371,15 @@
 
 .documents-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Layout explícito 2x2 */
+.grid-2x2 {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .document-card {
@@ -401,6 +430,86 @@
   color: var(--support-dark);
   font-size: 0.9rem;
   opacity: 0.8;
+}
+
+/* Header com Botão de Download */
+.header-documentacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.header-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.btn-download-center {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-download-center:hover {
+  background: linear-gradient(135deg, #229954 0%, #1e8449 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+  text-decoration: none;
+  color: white;
+}
+
+.btn-download-center:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(39, 174, 96, 0.2);
+}
+
+.btn-download-center i {
+  font-size: 1.1rem;
+}
+
+/* Grid de 3 Colunas para Documentos */
+.grid-3-cols {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Ajuste para tablets */
+@media (max-width: 992px) {
+  .grid-3-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .header-documentacao {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-right {
+    width: 100%;
+  }
+  
+  .btn-download-center {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 
@@ -576,6 +685,12 @@
   }
   
   .documents-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 100%;
+  }
+  
+  .grid-3-cols {
     grid-template-columns: 1fr;
   }
   
