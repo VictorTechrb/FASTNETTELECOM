@@ -46,33 +46,49 @@
   z-index: 1;
 }
 
+/* Centraliza e limita a largura do conteúdo do rodapé */
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
 .footer-main {
-  display: grid;
-  grid-template-columns: 2fr 1.5fr 1fr 1fr;
-  gap: 50px;
+  /* Layout Flexbox para alinhar colunas na mesma linha no desktop */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alinha colunas pelo topo */
+  gap: 40px;
+  padding: 60px 0; /* Espaçamento vertical do bloco principal */
   margin-bottom: 50px;
+  flex-wrap: nowrap; /* 4 colunas lado a lado em telas largas */
+}
+
+/* Colunas do rodapé */
+.footer-section {
+  text-align: left;
+  /* Usa flex ao invés de largura fixa para colunas responsivas e proporcionais */
+  flex: 1 1 0;
+  min-width: 220px;
+}
+
+/* Dá um pouco mais de espaço para a primeira coluna (logo + descrição) */
+.footer-section.company-info {
+  flex: 1.4 1 0;
 }
 
 .footer-section h3 {
-  color: var(--footer-primary);
-  font-size: 1.3rem;
+  color: var(--footer-primary); /* Destaque do título */
+  font-size: 1em; /* Tamanho padronizado */
   font-weight: 700;
   margin-bottom: 25px;
   position: relative;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px; /* Espaçamento padronizado */
 }
 
-.footer-section h3::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--footer-primary) 0%, #ff4444 100%);
-  border-radius: 2px;
-}
+/* Remover linha decorativa abaixo dos títulos para simplificar */
+.footer-section h3::after { display: none; }
 
 .company-info .footer-logo img {
   height: 55px;
@@ -82,7 +98,7 @@
 
 .company-description {
   color: var(--footer-text-secondary);
-  line-height: 1.7;
+  line-height: 1.5; /* Melhor leitura e alinhamento com o logo */
   margin-bottom: 25px;
   font-size: 1rem;
   font-weight: 300;
@@ -114,8 +130,8 @@
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
-  gap: 15px;
+  align-items: center; /* Ícone e texto centralizados verticalmente */
+  gap: 12px;
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
@@ -130,7 +146,7 @@
 .contact-item i {
   color: var(--footer-primary);
   font-size: 1.2rem;
-  margin-top: 3px;
+  margin-top: 0; /* Remove deslocamento vertical */
   min-width: 25px;
   text-shadow: 0 0 8px rgba(224, 33, 33, 0.3);
 }
@@ -201,7 +217,7 @@
 .services-list a:hover, 
 .links-list a:hover {
   color: var(--footer-primary);
-  padding-left: 20px;
+  padding-left: 14px; /* deslocamento mais sutil no hover */
   text-shadow: 0 0 8px rgba(224, 33, 33, 0.3);
 }
 
@@ -447,16 +463,25 @@
 }
 
 
+@media (min-width: 1025px) {
+  /* Separadores sutis entre colunas no desktop */
+  .footer-main .footer-section + .footer-section {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding-left: 24px;
+  }
+}
+
 @media (max-width: 1024px) {
   .footer-main {
-    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap; /* Permite quebrar em múltiplas linhas */
     gap: 40px;
   }
-  
+  .footer-section {
+    width: 48%; /* Duas colunas (2x2) em tablets e telas médias */
+  }
   .footer-section h3 {
     font-size: 1.2rem;
   }
-  
   .social-links {
     gap: 20px;
   }
@@ -464,16 +489,17 @@
 
 @media (max-width: 768px) {
   .footer-main {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     gap: 35px;
     text-align: center;
   }
-
+  .footer-section { width: 100%; }
+  /* Linha decorativa já desativada, mantemos centralização por segurança */
   .footer-section h3::after {
     left: 50%;
     transform: translateX(-50%);
   }
-
   .contact-item {
     justify-content: center;
     text-align: left;
