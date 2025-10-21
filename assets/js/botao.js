@@ -145,7 +145,7 @@
 
   function abrirWhatsApp(mensagem) {
     const mensagemCodificada = encodeURIComponent(mensagem);
-    const urlWhatsApp = `https://wa.me/${WHATSAPP_NUMERO}?text=${mensagemCodificada}`;
+    const urlWhatsApp = `https:
     window.open(urlWhatsApp, '_blank');
   }
 

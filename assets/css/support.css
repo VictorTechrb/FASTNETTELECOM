@@ -3,26 +3,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Correção: Remove espaço branco entre navbar e banner vermelho */
+
 body.support-page {
   margin-top: 0 !important;
-  padding-top: 55px !important; /* Apenas o necessário para a navbar fixa */
+  padding-top: 55px !important; 
 }
 
-/* Garante que o header/navbar não adicione margem extra */
+
 #navbar-placeholder,
 header.navbar {
   margin-bottom: 0 !important;
 }
 
-/* Correção específica para logo na navbar em páginas de subpasta */
+
 #logo-img {
   content: url('../images/fastbranco.webp');
   max-height: 40px;
   width: auto;
 }
 
-/* Fallback para caso a correção JS não funcione */
+
 .navbar .logo img {
   content: url('../images/fastbranco.webp') !important;
 }
@@ -44,7 +44,7 @@ header.navbar {
 .support-page {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   min-height: 100vh;
-  /* Removido padding-top excessivo - o body já tem padding-top: 55px para a navbar */
+  
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
@@ -56,7 +56,7 @@ header.navbar {
   text-align: center;
   position: relative;
   overflow: hidden;
-  /* Garante que o banner comece logo após a navbar fixa */
+  
   margin-top: 0 !important;
 }
 
@@ -77,7 +77,7 @@ header.navbar {
 }
 
 .support-hero .hero-content {
-  /* Remove qualquer margem inline que possa ter sido adicionada */
+  
   margin-top: 0 !important;
   padding-top: 0;
 }
@@ -377,7 +377,7 @@ header.navbar {
   margin: 0 auto;
 }
 
-/* Layout explícito 2x2 */
+
 .grid-2x2 {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -432,7 +432,7 @@ header.navbar {
   opacity: 0.8;
 }
 
-/* Header com Botão de Download */
+
 .header-documentacao {
   display: flex;
   justify-content: space-between;
@@ -485,13 +485,13 @@ header.navbar {
   font-size: 1.1rem;
 }
 
-/* Grid de 3 Colunas para Documentos */
+
 .grid-3-cols {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-/* Ajuste para tablets */
+
 @media (max-width: 992px) {
   .grid-3-cols {
     grid-template-columns: repeat(2, 1fr);

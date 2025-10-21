@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(destacarPlanoPopular, 1000);
     animarEntradaCards();
     
-    // Adicionar informações de ajuda no console
+    
     console.log('%c🛠️ SISTEMA DE LIMITES IMPLEMENTADO', 'background: #e02121; color: white; padding: 10px; border-radius: 5px; font-weight: bold;');
     console.log('%c📋 INSTRUÇÕES DE TESTE:', 'background: #333; color: white; padding: 5px; border-radius: 3px;');
     console.log('1. Abra um modal de aplicativos');
@@ -14,71 +14,71 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%c🔧 Execute testarLimites() para teste automatizado', 'background: #28a745; color: white; padding: 5px; border-radius: 3px;');
 });
 
-// ===== NOVA IMPLEMENTAÇÃO A LA CARTE =====
-// Dados dos aplicativos por categoria com IDs únicos
+
+
 const appsData = {
     'standard': [
-        { id: 'std_1', name: 'SKY+ Light', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem6-qr08k11b1vq6b8ocsnx64h0m4fiobudf2jx7lknz68.png' },
-        { id: 'std_2', name: 'iLooke', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Design-sem-nome-1-r5utkbxpzwdc1hci9xyizagel2upex9s9um4x657sk.png' },
-        { id: 'std_3', name: 'PlayKids+', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Captura_de_tela_2025-04-07_134116-removebg-preview-r40m7bz4wde4dh9pelj95rkepsmtxjxk55ltfp3d1s.png' },
-        { id: 'std_4', name: 'Kaspersky I', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem333-qqwwslxdbrpv8h95gj2ctxzzufyh79c2n099q391ao.png' },
-        { id: 'std_5', name: 'ExitLag', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/image-2-r7hzti30166nf78cxv8wnxqwkr9qlan4gto3pbarps.png' },
-        { id: 'std_6', name: 'KiddlePass', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Design-sem-nome-r5wmer218i0jxwgzwibwxph5luskxjr9k5mz3avkqc.png' },
-        { id: 'std_7', name: 'Hub Vantagens', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem5-qr08i1lkmh0dsvk4dt1iuz1kz5as2uhtgqcb4jlwb4.png' },
-        { id: 'std_8', name: 'UBookPlus', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Ubook-Plus-qqmkqahb4lwniz8xv9fikgca38ugentkrae045513k.png' },
-        { id: 'std_9', name: 'SocialComics', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/SocialComics-qqmkkb89njpzo9xls6dy7gnq20befz31lozt7s06og.png' },
-        { id: 'std_10', name: 'Estuda+', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem2-qpa2ajupfzcto55487r1lt6g0b865o1v3w1nmmnai4.png' },
-        { id: 'std_11', name: 'Playlist', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/icon-playlist-qpuk0ao16qsad7co3c5yd5wkk3wjuls21p9yms9fbk.png' },
-        { id: 'std_12', name: '+QNutri', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/QNutri-1-r0h4wx4k6hbeh6f6j9c8mjp8vbfzi5609qjdys5dxs.png' },
-        { id: 'std_13', name: 'Hube Revistas', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/LOGO-HUBE-REVISTAS-qqwwnnc198xdykgkfdv8o72ez8eqkrn2mgb0jilu4w.png' },
-        { id: 'std_14', name: 'Fluid', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/fluid-qqmkvdru5avkexup4ynrko35xdr13n18ghlop3l9e8.png' },
-        { id: 'std_15', name: 'CurtaON', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/CurtaOn-1-r0h4x7gs9npk0w05uvt4vz3bek10utb1z5pq8tq21c.png' },
-        { id: 'std_16', name: 'DocWay', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/logo-qqkql3w1vq8w0y1sazdb2c4z5de6y4ou1iyjffqrps.png' },
-        { id: 'std_17', name: 'PlayKids', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Captura_de_tela_2025-04-07_134116-removebg-preview-r40m7bz4wde4dh9pelj95rkepsmtxjxk55ltfp3d1s.png' },
-        { id: 'std_18', name: 'KiddlePass Plus', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Design-sem-nome-r5wmer218i0jxwgzwibwxph5luskxjr9k5mz3avkqc.png' }
+        { id: 'std_1', name: 'SKY+ Light', icon: 'https:
+        { id: 'std_2', name: 'iLooke', icon: 'https:
+        { id: 'std_3', name: 'PlayKids+', icon: 'https:
+        { id: 'std_4', name: 'Kaspersky I', icon: 'https:
+        { id: 'std_5', name: 'ExitLag', icon: 'https:
+        { id: 'std_6', name: 'KiddlePass', icon: 'https:
+        { id: 'std_7', name: 'Hub Vantagens', icon: 'https:
+        { id: 'std_8', name: 'UBookPlus', icon: 'https:
+        { id: 'std_9', name: 'SocialComics', icon: 'https:
+        { id: 'std_10', name: 'Estuda+', icon: 'https:
+        { id: 'std_11', name: 'Playlist', icon: 'https:
+        { id: 'std_12', name: '+QNutri', icon: 'https:
+        { id: 'std_13', name: 'Hube Revistas', icon: 'https:
+        { id: 'std_14', name: 'Fluid', icon: 'https:
+        { id: 'std_15', name: 'CurtaON', icon: 'https:
+        { id: 'std_16', name: 'DocWay', icon: 'https:
+        { id: 'std_17', name: 'PlayKids', icon: 'https:
+        { id: 'std_18', name: 'KiddlePass Plus', icon: 'https:
     ],
     'advanced': [
-        { id: 'adv_1', name: 'SKY+ Light e Globo', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem99-qr08s5d4pa8keyyll4pq7yo5dxln5l7ssn3sxbv5fo.png' },
-        { id: 'adv_2', name: 'Deezer', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem3-qr08e9az3htt1f23ho4mbffqu9yk2qgqlzqwjf7zdc.png' },
-        { id: 'adv_3', name: 'KiddlePass', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Design-sem-nome-r5wmer218i0jxwgzwibwxph5luskxjr9k5mz3avkqc.png' },
-        { id: 'adv_4', name: 'Kaspersky III', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem333-qqwwslxdbrpv8h95gj2ctxzzufyh79c2n099q391ao.png' },
-        { id: 'adv_5', name: 'HotGo', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem4-qr08g4zcrkeg9cbsihdraycxm0ozgxxevapv3cfmxc.png' },
-        { id: 'adv_6', name: 'CurtaOn', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/CurtaOn-1-r0h4x7gs9npk0w05uvt4vz3bek10utb1z5pq8tq21c.png' },
-        { id: 'adv_7', name: 'O Jornalista', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/icon-o-jornalista-qpt1ot7f4pvgxjswr2h43mgise8of8n0iy6ydfofyo.png' },
-        { id: 'adv_8', name: 'DocWay', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/logo-qqkql3w1vq8w0y1sazdb2c4z5de6y4ou1iyjffqrps.png' }
+        { id: 'adv_1', name: 'SKY+ Light e Globo', icon: 'https:
+        { id: 'adv_2', name: 'Deezer', icon: 'https:
+        { id: 'adv_3', name: 'KiddlePass', icon: 'https:
+        { id: 'adv_4', name: 'Kaspersky III', icon: 'https:
+        { id: 'adv_5', name: 'HotGo', icon: 'https:
+        { id: 'adv_6', name: 'CurtaOn', icon: 'https:
+        { id: 'adv_7', name: 'O Jornalista', icon: 'https:
+        { id: 'adv_8', name: 'DocWay', icon: 'https:
     ],
     'premium': [
-        { id: 'pre_1', name: 'Disney+', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Disney-r0g001wr97l5z37q1xf8qjn755wvxj7m1qwi5wbg0m.jpeg' },
-        { id: 'pre_2', name: 'Max', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Captura_de_tela_2025-04-07_133811-removebg-preview-r40mm6tax3q9vlotnipz2iloq1eolbwtuot3i52cpc.png' },
-        { id: 'pre_3', name: 'NBA', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/nba-qqml4jp6s5f7m2jgmf9tdutyfmkv9tdutyfmkv5ef0pul45802q8.png' },
-        { id: 'pre_4', name: 'SmartContent', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem666-qqwwynzxdc0e20ge35bsweyxnu3mt1dsszlx2a9p74.png' },
-        { id: 'pre_5', name: 'Kaspersky Plus', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem333-qqwwslxdbrpv8h95gj2ctxzzufyh79c2n099q391ao.png' },
-        { id: 'pre_6', name: 'QueimadiÁria', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem5555-qqwwwzu97xq1eyvrufbogu5fn6c54eqz8puuckqw9c.png' },
-        { id: 'pre_7', name: 'Zen', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Icon-Zen-SVG-_2_-qogeb5ojzdngpkxxg0bwehfn1nyh3uvvo50kem113k.png' }
+        { id: 'pre_1', name: 'Disney+', icon: 'https:
+        { id: 'pre_2', name: 'Max', icon: 'https:
+        { id: 'pre_3', name: 'NBA', icon: 'https:
+        { id: 'pre_4', name: 'SmartContent', icon: 'https:
+        { id: 'pre_5', name: 'Kaspersky Plus', icon: 'https:
+        { id: 'pre_6', name: 'QueimadiÁria', icon: 'https:
+        { id: 'pre_7', name: 'Zen', icon: 'https:
     ]
 };
 
-// ===== NOVA IMPLEMENTAÇÃO A LA CARTE COMPLETA =====
 
-// Preços fixos conforme regras de negócio
+
+
 const PRECOS_ALACARDS = {
     'standard': 5.00,
     'advanced': 10.00,
     'premium': 25.00
 };
 
-// Limites de aplicativos por tier conforme especificação
+
 const LIMITES_APPS = {
     standard: 10,
     advanced: 6,
     premium: 6
 };
 
-// Variáveis globais para controle de estado
-let selectedApps = []; // Array para rastrear aplicativos selecionados
-let currentCategory = ''; // Categoria atual do modal
-let currentPlan = ''; // Plano atual
-let showedPopupOnSecond = false; // Flag para controlar se já mostrou popup no segundo app
+
+let selectedApps = []; 
+let currentCategory = ''; 
+let currentPlan = ''; 
+let showedPopupOnSecond = false; 
 
 function inicializarPlanosInterativos() {
     console.log('🚀 Sistema A la Carte inicializado!');
@@ -92,18 +92,18 @@ function inicializarPlanosInterativos() {
     console.log('Advanced: máximo', LIMITES_APPS.advanced, 'apps');
     console.log('Premium: máximo', LIMITES_APPS.premium, 'apps');
     
-    // Função de teste para validar limites
+    
     window.testarLimites = function() {
         console.log('🧪 TESTE DE LIMITES INICIADO');
         console.log('Standard - Limite:', LIMITES_APPS.standard, '| Apps disponíveis:', appsData.standard.length);
         console.log('Advanced - Limite:', LIMITES_APPS.advanced, '| Apps disponíveis:', appsData.advanced.length);
         console.log('Premium - Limite:', LIMITES_APPS.premium, '| Apps disponíveis:', appsData.premium.length);
         
-        // Testes de validação
-        selectedApps = []; // Reset para teste
+        
+        selectedApps = []; 
         console.log('🔍 Testando validação Standard (limite 10):');
         
-        // Simular seleção de apps até o limite
+        
         for (let i = 0; i < LIMITES_APPS.standard; i++) {
             const resultado = validarSelecaoApp('standard');
             console.log(`App ${i + 1}: ${resultado ? '✅ Permitido' : '❌ Bloqueado'}`);
@@ -112,20 +112,20 @@ function inicializarPlanosInterativos() {
             }
         }
         
-        // Tentar adicionar um a mais (deve ser bloqueado)
+        
         const resultadoExcesso = validarSelecaoApp('standard');
         console.log(`App ${LIMITES_APPS.standard + 1}: ${resultadoExcesso ? '⚠️ ERRO - Foi permitido!' : '✅ Corretamente bloqueado'}`);
         
         console.log('🧪 TESTE CONCLUÍDO');
-        selectedApps = []; // Limpar após teste
+        selectedApps = []; 
     };
     
     console.log('💡 Para testar os limites, execute: testarLimites() no console');
 }
 
-// ===== FUNÇÃO PRINCIPAL: ABERTURA DO MODAL COM TOGGLE =====
+
 function abrirModalApps(tipoPlano, nomeDoPlano) {
-    // Prevenir comportamento padrão
+    
     if (event) {
         event.preventDefault();
         event.stopPropagation();
@@ -133,7 +133,7 @@ function abrirModalApps(tipoPlano, nomeDoPlano) {
     
     console.log(`🎯 Verificando estado para: ${tipoPlano} em plano ${nomeDoPlano}`);
     
-    // Encontrar o checkbox correspondente
+    
     const planoCard = document.querySelector(`[data-plano="${nomeDoPlano}"]`);
     if (!planoCard) {
         console.error(`❌ Plano card não encontrado: ${nomeDoPlano}`);
@@ -146,64 +146,64 @@ function abrirModalApps(tipoPlano, nomeDoPlano) {
         return;
     }
     
-    // LÓGICA DE TOGGLE: Verificar estado atual do checkbox
+    
     if (checkbox.checked) {
-        // Checkbox JÁ ESTÁ MARCADO - DESMARCAR E LIMPAR
+        
         console.log(`🔄 Checkbox marcado: desmarcando e limpando aplicativos...`);
         desmarcarELimparAplicativos(checkbox, tipoPlano, nomeDoPlano, planoCard);
     } else {
-        // Checkbox NÃO ESTÁ MARCADO - ABRIR MODAL
+        
         console.log(`🎯 Checkbox desmarcado: abrindo modal para seleção...`);
         abrirModalParaSelecao(tipoPlano, nomeDoPlano, checkbox, planoCard);
     }
 }
 
-// ===== FUNÇÃO PARA ABRIR MODAL (ESTADO DESMARCADO) =====
+
 function abrirModalParaSelecao(tipoPlano, nomeDoPlano, checkbox, planoCard) {
     console.log(`🚀 Abrindo modal de seleção: ${tipoPlano} para plano ${nomeDoPlano}`);
     
-    // Definir variáveis globais
+    
     currentCategory = tipoPlano;
     currentPlan = nomeDoPlano;
-    selectedApps = []; // Reset da seleção
-    showedPopupOnSecond = false; // Reset do popup
+    selectedApps = []; 
+    showedPopupOnSecond = false; 
     
-    // Atualizar título do modal
+    
     const modalTitle = document.getElementById('modal-title');
     const categoryName = tipoPlano.charAt(0).toUpperCase() + tipoPlano.slice(1);
     modalTitle.textContent = `APP's ${categoryName} - R$ ${PRECOS_ALACARDS[tipoPlano].toFixed(2)} cada`;
     
-    // Renderizar aplicativos
+    
     renderizarAppsNoModal(tipoPlano);
     
-    // Atualizar informações de preço
+    
     atualizarInfoPrecos(tipoPlano);
     
-    // Atualizar interface inicial
+    
     atualizarContadorSelecao();
     atualizarPrecoTotal();
     
-    // Mostrar modal
+    
     document.getElementById('apps-modal').style.display = 'flex';
     
-    // Adicionar classe para animação
+    
     document.querySelector('.apps-modal-content').style.animation = 'modalSlideIn 0.3s ease-out';
 }
 
-// ===== FUNÇÃO PARA DESMARCAR E LIMPAR (ESTADO MARCADO) =====
+
 function desmarcarELimparAplicativos(checkbox, tipoPlano, nomeDoPlano, planoCard) {
     console.log(`🧹 Desmarcando e limpando: ${tipoPlano} do plano ${nomeDoPlano}`);
     
-    // 1. Desmarcar o checkbox
+    
     checkbox.checked = false;
     console.log(`❌ Checkbox desmarcado`);
     
-    // 2. Resetar atributo de preço do checkbox
+    
     const precoOriginal = PRECOS_ALACARDS[tipoPlano];
     checkbox.setAttribute('data-preco', '0');
     console.log(`💰 Preço resetado de ${precoOriginal} para 0`);
     
-    // 3. Atualizar visualmente o texto do label
+    
     const extraOpcao = checkbox.closest('.extra-opcao');
     if (extraOpcao) {
         const extraNome = extraOpcao.querySelector('.extra-nome');
@@ -212,11 +212,11 @@ function desmarcarELimparAplicativos(checkbox, tipoPlano, nomeDoPlano, planoCard
         if (extraNome && extraPreco) {
             const categoriaFormatada = tipoPlano.charAt(0).toUpperCase() + tipoPlano.slice(1);
             
-            // Resetar para texto original
+            
             extraNome.textContent = `APP's ${categoriaFormatada}`;
             extraPreco.textContent = `+ R$ ${precoOriginal.toFixed(2)}`;
             
-            // Resetar estilos visuais
+            
             extraPreco.style.fontWeight = '';
             extraPreco.style.color = '';
             
@@ -224,14 +224,14 @@ function desmarcarELimparAplicativos(checkbox, tipoPlano, nomeDoPlano, planoCard
         }
     }
     
-    // 4. Recalcular preço total do plano
+    
     calcularPrecoTotalPlano(planoCard);
     console.log(`💲 Preço total do plano recalculado`);
     
-    // 5. Mostrar feedback visual de limpeza
+    
     mostrarFeedbackLimpeza(tipoPlano, nomeDoPlano);
     
-    // 6. Fechar modal se estiver aberto
+    
     const modal = document.getElementById('apps-modal');
     if (modal && modal.style.display === 'flex') {
         console.log(`🚪 Fechando modal aberto`);
@@ -239,11 +239,11 @@ function desmarcarELimparAplicativos(checkbox, tipoPlano, nomeDoPlano, planoCard
     }
 }
 
-// ===== FEEDBACK VISUAL DE LIMPEZA =====
+
 function mostrarFeedbackLimpeza(tipoPlano, nomeDoPlano) {
     const categoriaFormatada = tipoPlano.charAt(0).toUpperCase() + tipoPlano.slice(1);
     
-    // Criar notificação toast
+    
     const toast = document.createElement('div');
     toast.className = 'toast-notification toast-clear';
     toast.innerHTML = `
@@ -258,7 +258,7 @@ function mostrarFeedbackLimpeza(tipoPlano, nomeDoPlano) {
     
     document.body.appendChild(toast);
     
-    // Mostrar e remover automaticamente
+    
     setTimeout(() => toast.classList.add('show'), 10);
     setTimeout(() => {
         toast.classList.remove('show');
@@ -268,35 +268,35 @@ function mostrarFeedbackLimpeza(tipoPlano, nomeDoPlano) {
     console.log(`✅ Feedback de limpeza exibido para ${categoriaFormatada} em ${nomeDoPlano}`);
 }
 
-// ===== RENDERIZAÇÃO DOS APLICATIVOS NO MODAL =====
+
 function renderizarAppsNoModal(categoria) {
     const appsGrid = document.getElementById('apps-grid');
     const apps = appsData[categoria] || [];
     
     console.log(`📱 Renderizando ${apps.length} apps da categoria ${categoria}`);
     
-    // Limpar grid
+    
     appsGrid.innerHTML = '';
     
-    // Verificar se existem apps
+    
     if (apps.length === 0) {
         appsGrid.innerHTML = '<p class="no-apps">Nenhum aplicativo disponível nesta categoria.</p>';
         return;
     }
     
-    // Criar cards dos aplicativos
+    
     apps.forEach((app) => {
         const appCard = document.createElement('div');
         appCard.className = 'app-card';
         appCard.setAttribute('data-app-id', app.id);
         appCard.setAttribute('data-app-name', app.name);
         
-        // Verificar se app já está selecionado para aplicar classe correta
+        
         const isSelected = selectedApps.some(selectedApp => selectedApp.id === app.id);
         
         appCard.innerHTML = `
             <div class="app-icon">
-                <img src="${app.icon}" alt="${app.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;50&quot; height=&quot;50&quot; viewBox=&quot;0 0 50 50&quot;><rect width=&quot;50&quot; height=&quot;50&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;25&quot; y=&quot;25&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23666&quot;>APP</text></svg>'">
+                <img src="${app.icon}" alt="${app.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http:
             </div>
             <div class="app-name">${app.name}</div>
             <div class="app-price">R$ ${PRECOS_ALACARDS[categoria].toFixed(2)}</div>
@@ -306,14 +306,14 @@ function renderizarAppsNoModal(categoria) {
             </div>
         `;
         
-        // Aplicar visual de seleção se app já estiver selecionado
+        
         if (isSelected) {
             appCard.classList.add('selected');
             appCard.style.background = 'linear-gradient(135deg, #e8f5e8, #d4edda)';
             appCard.style.borderColor = '#28a745';
         }
         
-        // Adicionar event listener para seleção
+        
         appCard.addEventListener('click', () => selecionarApp(app, categoria));
         
         appsGrid.appendChild(appCard);
@@ -323,7 +323,7 @@ function renderizarAppsNoModal(categoria) {
     console.log(`🎯 Apps já selecionados: ${selectedApps.length}`);
 }
 
-// ===== FUNÇÃO DE VALIDAÇÃO DE LIMITES =====
+
 function validarSelecaoApp(categoria) {
     const contagemAtual = contarAppsSelecionados(categoria);
     const limite = LIMITES_APPS[categoria];
@@ -334,7 +334,7 @@ function validarSelecaoApp(categoria) {
         const categoriaFormatada = categoria.charAt(0).toUpperCase() + categoria.slice(1);
         const mensagem = `⚠️ Limite máximo atingido!\n\nVocê pode selecionar no máximo ${limite} aplicativo${limite > 1 ? 's' : ''} ${categoriaFormatada}.\n\nAtualmente você já tem ${contagemAtual} aplicativo${contagemAtual > 1 ? 's' : ''} selecionado${contagemAtual > 1 ? 's' : ''}.`;
         
-        // Mostrar alerta personalizado
+        
         mostrarAlerteLimite(mensagem, categoria, limite);
         return false;
     }
@@ -347,7 +347,7 @@ function contarAppsSelecionados(categoria) {
 }
 
 function mostrarAlerteLimite(mensagem, categoria, limite) {
-    // Criar popup de limite personalizado
+    
     const popup = document.createElement('div');
     popup.className = 'popup-limite-apps';
     popup.innerHTML = `
@@ -386,7 +386,7 @@ function mostrarAlerteLimite(mensagem, categoria, limite) {
     
     document.body.appendChild(popup);
     
-    // Mostrar popup com animação
+    
     setTimeout(() => popup.classList.add('show'), 10);
     
     console.log(`🚫 Alerta de limite exibido para ${categoria}: ${limite} apps máximo`);
@@ -400,30 +400,30 @@ function fecharPopupLimite() {
     }
 }
 
-// ===== LÓGICA DE SELEÇÃO DE APLICATIVOS COM VALIDAÇÃO =====
+
 function selecionarApp(app, categoria) {
     console.log(`🎯 Tentando selecionar app: ${app.name} (${app.id})`);
     
-    // Verificar se app já está selecionado
+    
     const appIndex = selectedApps.findIndex(selectedApp => selectedApp.id === app.id);
     const isCurrentlySelected = appIndex !== -1;
     
     if (isCurrentlySelected) {
-        // App já selecionado - permitir remoção sempre
+        
         selectedApps.splice(appIndex, 1);
         console.log(`❌ App ${app.name} removido da seleção`);
         atualizarVisualSelecao(app.id, false);
     } else {
-        // App não selecionado - VALIDAR ANTES DE ADICIONAR
+        
         if (!validarSelecaoApp(categoria)) {
             console.log(`🚫 Seleção impedida: limite de ${LIMITES_APPS[categoria]} apps ${categoria} atingido`);
-            return; // Impede a seleção
+            return; 
         }
         
-        // Validação passou - pode adicionar
+        
         console.log(`✅ Validação passou: adicionando ${app.name} à seleção`);
         
-        // Verificar se é o segundo app e mostrar popup
+        
         if (selectedApps.length === 1 && !showedPopupOnSecond) {
             mostrarPopupSegundoApp(categoria);
             showedPopupOnSecond = true;
@@ -440,7 +440,7 @@ function selecionarApp(app, categoria) {
         atualizarVisualSelecao(app.id, true);
     }
     
-    // Atualizar interface
+    
     atualizarContadorSelecao();
     atualizarPrecoTotal();
     
@@ -452,7 +452,7 @@ function selecionarApp(app, categoria) {
     });
 }
 
-// ===== ATUALIZAÇÃO VISUAL DA SELEÇÃO =====
+
 function atualizarVisualSelecao(appId, selecionado) {
     const appCard = document.querySelector(`[data-app-id="${appId}"]`);
     if (!appCard) return;
@@ -461,7 +461,7 @@ function atualizarVisualSelecao(appId, selecionado) {
     const text = appCard.querySelector('.selection-text');
     
     if (selecionado) {
-        // Aplicar visual de selecionado
+        
         appCard.classList.add('selected');
         circle.innerHTML = '✓';
         text.textContent = 'Selecionado';
@@ -470,10 +470,10 @@ function atualizarVisualSelecao(appId, selecionado) {
         appCard.style.transform = 'scale(1.02)';
         appCard.style.boxShadow = '0 8px 25px rgba(40, 167, 69, 0.3)';
         
-        // Adicionar animação de confirmação
+        
         circle.style.animation = 'checkmarkAnimation 0.3s ease-out';
     } else {
-        // Remover visual de selecionado
+        
         appCard.classList.remove('selected');
         circle.innerHTML = '';
         text.textContent = 'Selecionar';
@@ -484,18 +484,18 @@ function atualizarVisualSelecao(appId, selecionado) {
         circle.style.animation = '';
     }
     
-    // Remover animação após completar
+    
     setTimeout(() => {
         if (circle) circle.style.animation = '';
     }, 300);
 }
 
-// ===== POPUP INFORMATIVO NO SEGUNDO APP =====
+
 function mostrarPopupSegundoApp(categoria) {
     const precoUnitario = PRECOS_ALACARDS[categoria];
     const categoriaFormatada = categoria.charAt(0).toUpperCase() + categoria.slice(1);
     
-    // Criar popup customizado
+    
     const popup = document.createElement('div');
     popup.className = 'popup-segundo-app';
     popup.innerHTML = `
@@ -531,7 +531,7 @@ function mostrarPopupSegundoApp(categoria) {
     
     document.body.appendChild(popup);
     
-    // Mostrar popup com animação
+    
     setTimeout(() => popup.classList.add('show'), 10);
 }
 
@@ -543,17 +543,17 @@ function fecharPopupSegundoApp() {
     }
 }
 
-// ===== FUNÇÃO PARA LIMPAR TODOS OS APLICATIVOS =====
+
 function clearApps() {
     console.log(`🧹 Limpando todos os apps selecionados...`);
     
-    // Backup da lista para log
+    
     const appsAntes = [...selectedApps];
     
-    // Limpar array de seleção
+    
     selectedApps = [];
     
-    // Remover visual de seleção de TODOS os apps na interface
+    
     const todosAppCards = document.querySelectorAll('.app-card');
     todosAppCards.forEach(appCard => {
         const appId = appCard.getAttribute('data-app-id');
@@ -562,17 +562,17 @@ function clearApps() {
         }
     });
     
-    // NOVA FUNCIONALIDADE: Desmarcar checkboxes dos planos
+    
     desmarcarCheckboxesPlanos();
     
-    // Resetar contador e preço total
+    
     atualizarContadorSelecao();
     atualizarPrecoTotal();
     
-    // Resetar flag do popup
+    
     showedPopupOnSecond = false;
     
-    // Feedback visual com animação
+    
     const clearBtn = document.querySelector('.apps-clear-btn');
     if (clearBtn) {
         clearBtn.style.background = '#28a745';
@@ -584,7 +584,7 @@ function clearApps() {
         }, 1500);
     }
     
-    // Mostrar notificação
+    
     if (appsAntes.length > 0) {
         mostrarNotificacaoLimpeza(appsAntes.length);
     }
@@ -595,7 +595,7 @@ function clearApps() {
 }
 
 function mostrarNotificacaoLimpeza(quantidadeRemovida) {
-    // Criar notificação toast para limpeza
+    
     const toast = document.createElement('div');
     toast.className = 'toast-notification toast-clear';
     toast.innerHTML = `
@@ -610,7 +610,7 @@ function mostrarNotificacaoLimpeza(quantidadeRemovida) {
     
     document.body.appendChild(toast);
     
-    // Mostrar e remover automaticamente
+    
     setTimeout(() => toast.classList.add('show'), 10);
     setTimeout(() => {
         toast.classList.remove('show');
@@ -618,24 +618,24 @@ function mostrarNotificacaoLimpeza(quantidadeRemovida) {
     }, 2500);
 }
 
-// ===== FUNÇÃO PARA DESMARCAR CHECKBOXES DOS PLANOS =====
+
 function desmarcarCheckboxesPlanos() {
     console.log(`🔄 Desmarcando checkboxes dos planos...`);
     
-    // Encontrar todos os checkboxes relacionados aos apps (standard, advanced, premium)
+    
     const checkboxesApps = document.querySelectorAll('input[type="checkbox"][value="standard"], input[type="checkbox"][value="advanced"], input[type="checkbox"][value="premium"]');
     
     checkboxesApps.forEach(checkbox => {
         if (checkbox.checked) {
             console.log(`❌ Desmarcando checkbox: ${checkbox.value}`);
             
-            // Desmarcar o checkbox
+            
             checkbox.checked = false;
             
-            // Resetar atributo de preço
+            
             checkbox.setAttribute('data-preco', '0');
             
-            // Atualizar visualmente o label correspondente
+            
             const extraOpcao = checkbox.closest('.extra-opcao');
             if (extraOpcao) {
                 const extraNome = extraOpcao.querySelector('.extra-nome');
@@ -645,17 +645,17 @@ function desmarcarCheckboxesPlanos() {
                     const categoria = checkbox.value;
                     const categoriaFormatada = categoria.charAt(0).toUpperCase() + categoria.slice(1);
                     
-                    // Resetar texto para estado original
+                    
                     extraNome.textContent = `APP's ${categoriaFormatada}`;
                     extraPreco.textContent = `+ R$ ${PRECOS_ALACARDS[categoria].toFixed(2)}`;
                     
-                    // Resetar estilos visuais
+                    
                     extraPreco.style.fontWeight = '';
                     extraPreco.style.color = '';
                 }
             }
             
-            // Recalcular preço total do plano que contém este checkbox
+            
             const planoCard = checkbox.closest('.plano-card');
             if (planoCard) {
                 calcularPrecoTotalPlano(planoCard);
@@ -666,7 +666,7 @@ function desmarcarCheckboxesPlanos() {
     console.log(`✅ Checkboxes dos planos desmarcados e preços resetados`);
 }
 
-// ===== CÁLCULO E ATUALIZAÇÃO DE PREÇOS =====
+
 function calcularPrecoTotal() {
     if (selectedApps.length === 0) return 0;
     
@@ -698,17 +698,17 @@ function atualizarContadorSelecao() {
         contador.style.display = 'flex';
         contador.textContent = `${quantidadeSelecionada}/${limite}`;
         
-        // Remover classes anteriores
+        
         contador.classList.remove('warning', 'danger');
         
-        // Aplicar classes CSS baseado na proximidade do limite
+        
         if (quantidadeSelecionada >= limite) {
             contador.classList.add('danger');
         } else if (quantidadeSelecionada >= limite * 0.8) {
             contador.classList.add('warning');
         }
         
-        // Resetar estilos inline para usar as classes CSS
+        
         contador.style.background = '';
         contador.style.color = '';
         
@@ -721,7 +721,7 @@ function atualizarContadorSelecao() {
         confirmBtn.disabled = true;
     }
     
-    // Atualizar título do modal com informação de limite
+    
     const modalTitle = document.getElementById('modal-title');
     if (modalTitle && currentCategory) {
         const categoriaFormatada = currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
@@ -747,7 +747,7 @@ function atualizarInfoPrecos(categoria) {
     }
 }
 
-// ===== CONFIRMAÇÃO DA SELEÇÃO =====
+
 function confirmarSelecaoApps() {
     if (selectedApps.length === 0) {
         alert('Selecione pelo menos um aplicativo!');
@@ -765,13 +765,13 @@ function confirmarSelecaoApps() {
         total: valorTotal
     });
     
-    // Atualizar interface do plano
+    
     atualizarCheckboxEPrecoPlano(categoria, plano, selectedApps.length, valorTotal);
     
-    // Fechar modal (informando que é uma confirmação)
+    
     fecharModalApps(true);
     
-    // Mostrar confirmação
+    
     mostrarConfirmacaoSelecao(selectedApps.length, valorTotal, categoria);
 }
 
@@ -779,7 +779,7 @@ function mostrarConfirmacaoSelecao(quantidade, valor, categoria) {
     const categoriaFormatada = categoria.charAt(0).toUpperCase() + categoria.slice(1);
     const mensagem = `✅ Seleção confirmada!\n\n${quantidade} app${quantidade > 1 ? 's' : ''} ${categoriaFormatada}\nTotal: R$ ${valor.toFixed(2)}`;
     
-    // Criar notificação toast
+    
     const toast = document.createElement('div');
     toast.className = 'toast-notification';
     toast.innerHTML = `
@@ -794,7 +794,7 @@ function mostrarConfirmacaoSelecao(quantidade, valor, categoria) {
     
     document.body.appendChild(toast);
     
-    // Mostrar e remover automaticamente
+    
     setTimeout(() => toast.classList.add('show'), 10);
     setTimeout(() => {
         toast.classList.remove('show');
@@ -802,7 +802,7 @@ function mostrarConfirmacaoSelecao(quantidade, valor, categoria) {
     }, 3000);
 }
 
-// ===== ATUALIZAÇÃO DA INTERFACE DO PLANO =====
+
 function atualizarCheckboxEPrecoPlano(categoria, plano, quantidade, valorTotal) {
     const planoCard = document.querySelector(`[data-plano="${plano}"]`);
     if (!planoCard) return;
@@ -810,11 +810,11 @@ function atualizarCheckboxEPrecoPlano(categoria, plano, quantidade, valorTotal) 
     const checkbox = planoCard.querySelector(`input[value="${categoria}"]`);
     if (!checkbox) return;
     
-    // Marcar checkbox e atualizar preço
+    
     checkbox.checked = true;
     checkbox.setAttribute('data-preco', valorTotal.toFixed(2));
     
-    // Atualizar texto do label
+    
     const extraInfo = checkbox.closest('.extra-opcao').querySelector('.extra-nome');
     const extraPreco = checkbox.closest('.extra-opcao').querySelector('.extra-preco');
     
@@ -823,20 +823,20 @@ function atualizarCheckboxEPrecoPlano(categoria, plano, quantidade, valorTotal) 
         extraInfo.textContent = `APP's ${categoriaFormatada} (${quantidade} app${quantidade > 1 ? 's' : ''})`;
         extraPreco.textContent = `+ R$ ${valorTotal.toFixed(2)}`;
         
-        // Destacar visualmente
+        
         extraPreco.style.fontWeight = '700';
         extraPreco.style.color = '#e02121';
     }
     
-    // Recalcular preço total do plano
+    
     calcularPrecoTotalPlano(planoCard);
 }
 
-// ===== CONTROLE DO MODAL =====
+
 function fecharModalApps(isConfirmacao = false) {
     console.log(`🚪 Fechando modal A la Carte... (Confirmação: ${isConfirmacao})`);
     
-    // FUNCIONALIDADE: Limpar seleções apenas ao cancelar (não ao confirmar)
+    
     if (selectedApps.length > 0 && !isConfirmacao) {
         console.log(`🔄 Cancelar: limpando ${selectedApps.length} apps selecionados...`);
         clearApps();
@@ -851,16 +851,16 @@ function fecharModalApps(isConfirmacao = false) {
         modal.style.display = 'none';
         modalContent.style.animation = '';
         
-        // Limpar estado interno apenas
+        
         if (isConfirmacao) {
-            // Se foi confirmação, apenas limpar estado interno sem afetar UI
+            
             selectedApps = [];
             currentCategory = '';
             currentPlan = '';
             showedPopupOnSecond = false;
             console.log(`✅ Modal fechado após confirmação - Estado interno limpo`);
         } else {
-            // Se foi cancelamento, estado já foi limpo pelo clearApps()
+            
             selectedApps = [];
             currentCategory = '';
             currentPlan = '';
@@ -870,7 +870,7 @@ function fecharModalApps(isConfirmacao = false) {
     }, 300);
 }
 
-// Fechar modal ao clicar fora
+
 document.addEventListener('click', function(event) {
     const modal = document.getElementById('apps-modal');
     if (event.target === modal) {
@@ -878,7 +878,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// ===== FUNÇÕES AUXILIARES (PLANOS) =====
+
 function calcularPrecoTotalPlano(planoCard) {
     const precoBaseElement = planoCard.querySelector('.preco-base');
     const valorTotalElement = planoCard.querySelector('.valor-total');
@@ -896,7 +896,7 @@ function calcularPrecoTotalPlano(planoCard) {
     const total = precoBase + valorExtras;
     valorTotalElement.textContent = `R$ ${total.toFixed(2)}`;
     
-    // Animação visual
+    
     valorTotalElement.style.transform = 'scale(1.1)';
     valorTotalElement.style.color = '#e02121';
     setTimeout(() => {
@@ -939,7 +939,7 @@ function contratarPlano(tipoPlano) {
     mensagem += ` *Gostaria de mais informações e contratar este plano!*`;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=557930454880&text=${mensagemCodificada}`;
+    const whatsappUrl = `https:
     window.open(whatsappUrl, '_blank');
 
     const botaoContratar = planoCard.querySelector('.btn-contratar');
@@ -987,9 +987,9 @@ function animarEntradaCards() {
     });
 }
 
-// ===== FUNCIONALIDADES DA BARRA DE AÇÃO FIXA =====
 
-// Variáveis globais para controle da barra de ação
+
+
 let actionBarVisible = false;
 let globalSelectedApps = [];
 let globalTotalValue = 0;
@@ -1001,12 +1001,12 @@ function updateActionBar() {
     
     if (!actionBar || !totalValueElement || !selectedCountElement) return;
     
-    // Calcular total e apps selecionados de todos os planos
+    
     let totalValue = 0;
     let totalAppsSelected = 0;
     const allPlans = [];
     
-    // Verificar todos os planos na página
+    
     const planoCards = document.querySelectorAll('.plano-card');
     planoCards.forEach(planoCard => {
         const planoNome = planoCard.getAttribute('data-plano');
@@ -1014,13 +1014,13 @@ function updateActionBar() {
         let valorExtras = 0;
         let appsCount = 0;
         
-        // Verificar checkboxes selecionados
+        
         const checkboxesSelecionados = planoCard.querySelectorAll('.extra-opcao input[type="checkbox"]:checked');
         checkboxesSelecionados.forEach(checkbox => {
             const valor = parseFloat(checkbox.getAttribute('data-preco') || '0');
             valorExtras += valor;
             
-            // Contar apps baseado no nome do campo
+            
             const extraNome = checkbox.closest('.extra-opcao').querySelector('.extra-nome').textContent;
             if (extraNome.includes('(') && extraNome.includes('app')) {
                 const match = extraNome.match(/\((\d+)\s+app/);
@@ -1045,15 +1045,15 @@ function updateActionBar() {
         }
     });
     
-    // Atualizar variáveis globais
+    
     globalTotalValue = totalValue;
     globalSelectedApps = allPlans;
     
-    // Atualizar elementos da interface
+    
     totalValueElement.textContent = `R$ ${totalValue.toFixed(2)}`;
     selectedCountElement.textContent = `${totalAppsSelected} app${totalAppsSelected !== 1 ? 's' : ''} selecionado${totalAppsSelected !== 1 ? 's' : ''}`;
     
-    // Mostrar/ocultar barra
+    
     if (totalValue > 0 && !actionBarVisible) {
         showActionBar();
     } else if (totalValue === 0 && actionBarVisible) {
@@ -1067,18 +1067,18 @@ function showActionBar() {
     const actionBar = document.getElementById('action-bar');
     if (!actionBar) return;
     
-    // Verificar se é desktop ou mobile
+    
     const isDesktop = window.innerWidth > 768;
     
     if (isDesktop) {
-        // Desktop: barra no fluxo normal da página
+        
         actionBar.style.position = 'relative';
         actionBar.style.bottom = 'auto';
         actionBar.style.display = 'block';
         actionBar.classList.add('show');
-        // Não adicionar padding ao body no desktop
+        
     } else {
-        // Mobile/Tablet: barra fixa
+        
         actionBar.style.position = 'fixed';
         actionBar.style.bottom = '0';
         actionBar.style.display = 'block';
@@ -1099,10 +1099,10 @@ function hideActionBar() {
     actionBar.classList.remove('show');
     
     if (isDesktop) {
-        // Desktop: simplesmente ocultar
+        
         actionBar.style.display = 'none';
     } else {
-        // Mobile: animação de saída
+        
         setTimeout(() => {
             actionBar.style.display = 'none';
             actionBar.classList.remove('animate-in');
@@ -1117,18 +1117,18 @@ function hideActionBar() {
 function clearAllSelections() {
     console.log('🧹 Limpando todas as seleções...');
     
-    // Limpar todos os checkboxes
+    
     const todosCheckboxes = document.querySelectorAll('input[type="checkbox"][value="standard"], input[type="checkbox"][value="advanced"], input[type="checkbox"][value="premium"]');
     
     todosCheckboxes.forEach(checkbox => {
         if (checkbox.checked) {
-            // Desmarcar o checkbox
+            
             checkbox.checked = false;
             
-            // Resetar atributo de preço
+            
             checkbox.setAttribute('data-preco', '0');
             
-            // Atualizar visualmente o label correspondente
+            
             const extraOpcao = checkbox.closest('.extra-opcao');
             if (extraOpcao) {
                 const extraNome = extraOpcao.querySelector('.extra-nome');
@@ -1138,17 +1138,17 @@ function clearAllSelections() {
                     const categoria = checkbox.value;
                     const categoriaFormatada = categoria.charAt(0).toUpperCase() + categoria.slice(1);
                     
-                    // Resetar texto para estado original
+                    
                     extraNome.textContent = `APP's ${categoriaFormatada}`;
                     extraPreco.textContent = `+ R$ ${PRECOS_ALACARDS[categoria].toFixed(2)}`;
                     
-                    // Resetar estilos visuais
+                    
                     extraPreco.style.fontWeight = '';
                     extraPreco.style.color = '';
                 }
             }
             
-            // Recalcular preço total do plano que contém este checkbox
+            
             const planoCard = checkbox.closest('.plano-card');
             if (planoCard) {
                 calcularPrecoTotalPlano(planoCard);
@@ -1156,14 +1156,14 @@ function clearAllSelections() {
         }
     });
     
-    // Limpar seleções do modal se estiver aberto
+    
     selectedApps = [];
     showedPopupOnSecond = false;
     
-    // Atualizar barra de ação
+    
     updateActionBar();
     
-    // Mostrar feedback visual
+    
     const clearBtn = document.getElementById('action-clear-btn');
     if (clearBtn) {
         const originalContent = clearBtn.innerHTML;
@@ -1176,7 +1176,7 @@ function clearAllSelections() {
         }, 2000);
     }
     
-    // Mostrar notificação
+    
     mostrarNotificacaoLimpeza(globalSelectedApps.length);
     
     console.log('✅ Todas as seleções foram limpas');
@@ -1209,10 +1209,10 @@ function contractSelectedPlan() {
     mensagem += `📞 *Gostaria de mais informações e fechar este negócio!*`;
     
     const mensagemCodificada = encodeURIComponent(mensagem);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=557930454880&text=${mensagemCodificada}`;
+    const whatsappUrl = `https:
     window.open(whatsappUrl, '_blank');
     
-    // Feedback visual
+    
     const contractBtn = document.getElementById('action-contract-btn');
     if (contractBtn) {
         const originalContent = contractBtn.innerHTML;
@@ -1228,34 +1228,34 @@ function contractSelectedPlan() {
     console.log('✅ Mensagem WhatsApp enviada');
 }
 
-// Modificar a função calcularPrecoTotalPlano para atualizar a barra de ação
+
 const calcularPrecoTotalPlanoOriginal = calcularPrecoTotalPlano;
 calcularPrecoTotalPlano = function(planoCard) {
     calcularPrecoTotalPlanoOriginal(planoCard);
     
-    // Atualizar barra de ação após mudança nos preços
+    
     setTimeout(updateActionBar, 100);
 }
 
-// Modificar a função confirmarSelecaoApps para atualizar a barra de ação
+
 const confirmarSelecaoAppsOriginal = confirmarSelecaoApps;
 confirmarSelecaoApps = function() {
     confirmarSelecaoAppsOriginal();
     
-    // Atualizar barra de ação após confirmação
+    
     setTimeout(updateActionBar, 300);
 }
 
-// Modificar a função clearApps para atualizar a barra de ação
+
 const clearAppsOriginal = clearApps;
 clearApps = function() {
     clearAppsOriginal();
     
-    // Atualizar barra de ação após limpeza
+    
     setTimeout(updateActionBar, 100);
 }
 
-// Adicionar listener para mudanças nos checkboxes
+
 document.addEventListener('change', function(event) {
     if (event.target.type === 'checkbox' && 
         (event.target.value === 'standard' || event.target.value === 'advanced' || event.target.value === 'premium')) {
@@ -1264,14 +1264,14 @@ document.addEventListener('change', function(event) {
     }
 });
 
-// Inicializar barra de ação ao carregar página
+
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(updateActionBar, 500);
 });
 
-// Listener para mudanças de tamanho de tela
+
 window.addEventListener('resize', function() {
-    // Reagir a mudanças de orientação/tamanho da tela
+    
     if (actionBarVisible) {
         hideActionBar();
         setTimeout(() => {
@@ -1282,12 +1282,12 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Função utilitária para verificar se é mobile
+
 function isMobile() {
     return window.innerWidth <= 768;
 }
 
-// Função utilitária para verificar se é desktop
+
 function isDesktop() {
     return window.innerWidth > 768;
 }

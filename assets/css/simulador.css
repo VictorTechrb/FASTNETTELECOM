@@ -1426,7 +1426,7 @@
   }
 }
 
-/* Ajustes finais de responsividade para dar mais espaço na parte inferior do cartão (mobile) */
+
 @media (max-width: 768px) {
   .simulador-contador {
     min-height: 520px !important;

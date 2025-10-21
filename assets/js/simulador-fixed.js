@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     status: !!status
   });
 
-  // Verificar se os elementos existem
+  
   if (!checkboxes.length || !rangeDispositivos || !contadorDispositivos || !contadorMbps || !gaugeBar || !status) {
     console.error('Simulador: Elementos necessários não encontrados no DOM');
     return;
@@ -267,19 +267,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const numeroWhatsApp = '557930454880';
     
-    const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemCodificada}`;
+    const urlWhatsApp = `https:
     window.open(urlWhatsApp, '_blank');
     
     
     fecharModal();
   }
 
-  // Tornar funções globais para uso no HTML
+  
   window.descobrirPlanoIdeal = descobrirPlanoIdeal;
   window.fecharModal = fecharModal;
   window.contratarPlanoWhatsApp = contratarPlanoWhatsApp;
 
-  // Event listeners
+  
   checkboxes.forEach((cb, index) => {
     console.log(`Adicionando listener para checkbox ${index}`);
     cb.addEventListener('change', function() {

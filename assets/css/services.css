@@ -1,6 +1,6 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* --- Variáveis Globais e Reset --- */
+
 :root {
   --primary-red: #e02121;
   --primary-red-dark: #c01d1d;
@@ -39,7 +39,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
-  transition: padding-bottom 0.3s ease; /* Transição para o padding do body */
+  transition: padding-bottom 0.3s ease; 
 }
 
 main {
@@ -49,7 +49,7 @@ main {
   position: relative;
 }
 
-/* --- Animações --- */
+
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
@@ -75,7 +75,7 @@ main {
   100% { box-shadow: var(--shadow-sm); }
 }
 
-/* --- Layout e Títulos --- */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 2px;
 }
 
-/* --- Seções Principais --- */
+
 .planos-interativos-section,
 .servicos-barra,
 .combo-section {
@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 40px;
 }
 
-/* --- Estilos de Cards (Base e Variações) --- */
+
 .app-card {
   display: flex;
   flex-direction: column;
@@ -159,18 +159,18 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   text-align: center;
   padding: 24px;
-  border-radius: var(--border-radius-lg); /* Cantos mais arredondados */
+  border-radius: var(--border-radius-lg); 
   background: var(--white);
-  box-shadow: var(--shadow-md); /* Sombra mais sutil e elevada */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição mais suave */
+  box-shadow: var(--shadow-md); 
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
   min-height: 180px;
-  border: 1px solid #e2e8f0; /* Borda sutil padrão */
+  border: 1px solid #e2e8f0; 
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
 
-/* Efeito de brilho no hover */
+
 .app-card::after {
   content: '';
   position: absolute;
@@ -191,12 +191,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .app-card:hover {
-  transform: translateY(-10px); /* Elevação maior */
-  box-shadow: var(--shadow-xl); /* Sombra mais pronunciada */
+  transform: translateY(-10px); 
+  box-shadow: var(--shadow-xl); 
   border-color: var(--primary-red);
 }
 
-/* Container para o conteúdo do card, para ficar acima do efeito ::after */
+
 .app-card > * {
   position: relative;
   z-index: 1;
@@ -235,7 +235,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* Outros cards */
+
 .plano-card,
 .combo-card {
   transition: var(--transition);
@@ -270,10 +270,10 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.1;
 }
 
-/* --- Grids --- */
+
 .planos-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mobile-first: coluna única */
+  grid-template-columns: 1fr; 
   gap: 20px;
   padding: 0 10px;
 }
@@ -286,8 +286,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 10px;
 }
 
-/* --- Componentes Específicos (Serviços, Apps) --- */
-/* --- Cabeçalho de Categoria de Serviço (NOVO ESTILO) --- */
+
+
 .categoria-header {
   position: relative;
   padding: 1.5rem 2rem;
@@ -295,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--white);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
-  border-top: 4px solid var(--primary-red); /* Cor padrão para 'Standard' */
+  border-top: 4px solid var(--primary-red); 
   transition: var(--transition);
 }
 
@@ -311,10 +311,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
-  color: var(--primary-red); /* Cor padrão */
+  color: var(--primary-red); 
 }
 
-/* Ícone Padrão (Estrela) */
+
 .categoria-header h3::before {
   content: '★';
   font-size: 1.2rem;
@@ -324,14 +324,14 @@ h1, h2, h3, h4, h5, h6 {
 .categoria-header p {
   color: var(--text-secondary);
   margin: 0.5rem 0 0;
-  /* Alinha a descrição com o texto do título, não com o ícone */
+  
   padding-left: calc(1.2rem + 0.75rem); 
   font-size: 0.9rem;
 }
 
-/* Modificador para a categoria Premium */
+
 .categoria-header.premium {
-  --category-color: #f0b90b; /* Cor dourada para Premium */
+  --category-color: #f0b90b; 
   border-top-color: var(--category-color);
 }
 
@@ -339,9 +339,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--category-color);
 }
 
-/* Modificador para a categoria Advanced (exemplo) */
+
 .categoria-header.advanced {
-  --category-color: #007bff; /* Cor azul para Advanced */
+  --category-color: #007bff; 
   border-top-color: var(--category-color);
 }
 
@@ -349,7 +349,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--category-color);
 }
 
-/* Ícone diferente para Advanced (exemplo) */
+
 .categoria-header.advanced h3::before {
     content: '🚀';
 }
@@ -365,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-/* --- Botão --- */
+
 .btn-contratar {
   display: inline-block;
   transition: var(--transition);
@@ -386,7 +386,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-/* --- Barra de Ação Fixa --- */
+
 .action-bar {
   position: fixed;
   bottom: 0;
@@ -460,7 +460,7 @@ h1, h2, h3, h4, h5, h6 {
   animation: none;
 }
 
-/* --- Footer --- */
+
 .footer {
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2d2d2d 75%, #1a1a1a 100%);
   color: var(--white);
@@ -470,9 +470,9 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   width: 100%;
 }
-/* ... (Estilos do footer como na versão anterior) ... */
 
-/* --- Estilos Modal A La Carte --- */
+
+
 .apps-modal-overlay {
   display: none;
   position: fixed;
@@ -506,16 +506,16 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
-/* ... (Restante dos estilos do Modal) ... */
 
-/* --- Media Queries --- */
 
-/* Ajuste de padding para body quando action-bar está visível (Mobile-first) */
+
+
+
 body.action-bar-visible {
   padding-bottom: 90px;
 }
 
-/* Tablet (481px e acima) */
+
 @media (min-width: 481px) {
   .planos-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -533,7 +533,7 @@ body.action-bar-visible {
   }
 }
 
-/* Tablet Grande (769px a 1024px) */
+
 @media (min-width: 769px) and (max-width: 1024px) {
   .planos-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -547,9 +547,9 @@ body.action-bar-visible {
   }
 }
 
-/* Desktop (1025px e acima) */
+
 @media (min-width: 1025px) {
-  /* Animação de entrada para seções no desktop */
+  
   .combo-section,
   .planos-interativos-section,
   .servicos-barra {
@@ -574,7 +574,7 @@ body.action-bar-visible {
     margin: 0 auto;
   }
   
-  /* Barra de ação volta ao fluxo normal no desktop */
+  
   .action-bar {
     position: relative;
     transform: none;
@@ -589,15 +589,15 @@ body.action-bar-visible {
   }
   
   body.action-bar-visible {
-    padding-bottom: 0; /* Remove o padding no desktop */
+    padding-bottom: 0; 
   }
 
   .action-btn span {
-    display: inline; /* Mostra o texto do botão novamente */
+    display: inline; 
   }
 }
 
-/* Responsividade de componentes específicos */
+
 @media (max-width: 768px) {
   .section-title { font-size: 2rem; }
   .apps-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
@@ -607,7 +607,7 @@ body.action-bar-visible {
   }
   
   .action-btn span {
-    display: none; /* Oculta o texto do botão em telas menores */
+    display: none; 
   }
   
   .action-btn i {

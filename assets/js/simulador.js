@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const maxMbps = 1000;
   const mbpsPorDispositivo = 10;
   
-  // Catálogo unificado de planos (regra de negócio vigente) – preços e inclusão de roteador centralizados aqui.
-  // Se precisar alterar preço ou benefícios, ajustar SOMENTE este objeto.
+  
+  
   const PLANOS = {
     p300: {
       id: 'p300', nome: 'Plano Básico', velocidade: 300, rotulo: '300MB', preco: 'R$ 65,00', incluiRoteador: false,
@@ -36,17 +36,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // Regra de recomendação: apenas 300 / 700 / 1GB são sugeridos automaticamente.
-  // O plano 500MB permanece disponível para contratação manual (ex.: cards ou comparativo), não é auto-recomendado.
+  
+  
   function recomendarPlanoPorVelocidade(vel) {
-    if (vel <= 299) return PLANOS.p300;      // 0–299
-    if (vel <= 699) return PLANOS.p700;      // 300–699
-    return PLANOS.p1000;                     // 700–1000
+    if (vel <= 299) return PLANOS.p300;      
+    if (vel <= 699) return PLANOS.p700;      
+    return PLANOS.p1000;                     
   }
 
   function formatarPreco(p) { return typeof p === 'number' ? p.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}) : p; }
 
-  // Monta mensagem dinâmica (reutilizável por outros fluxos se necessário)
+  
   function criarMensagemWhatsApp(dados) {
     const plano = dados.plano;
     const incluiRoteadorTxt = plano.incluiRoteador ? '✅ Inclui roteador Wi‑Fi' : '❌ Sem roteador incluso';
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     status: !!status
   });
 
-  // Verificar se os elementos existem
+  
   if (!checkboxes.length || !rangeDispositivos || !contadorDispositivos || !contadorMbps || !gaugeBar || !status) {
     console.error('Simulador: Elementos necessários não encontrados no DOM');
     return;
@@ -109,17 +109,17 @@ document.addEventListener('DOMContentLoaded', function() {
       currentMbps = Math.round(startMbps + diffMbps * ease);
       currentPercent = startPercent + diffPercent * ease;
       
-      // Formatar a exibição: se for 1000MB ou mais, mostrar como "1GB"
+      
       if (currentMbps >= 1000) {
         contadorMbps.textContent = '1GB';
-        // Manter a unidade vazia quando for 1GB (já está incluída no texto)
+        
         const unidadeElement = document.querySelector('.contador-mbps-unit');
         if (unidadeElement) {
           unidadeElement.textContent = '';
         }
       } else {
         contadorMbps.textContent = currentMbps;
-        // Manter a unidade como "MB"
+        
         const unidadeElement = document.querySelector('.contador-mbps-unit');
         if (unidadeElement) {
           unidadeElement.textContent = 'MB';
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dispositivos = parseInt(rangeDispositivos.value, 10);
     total += dispositivos * mbpsPorDispositivo;
     
-    // Limitar o máximo em 1000MB (1GB) - não pode passar disso
+    
     if (total > maxMbps) {
       total = maxMbps;
     }
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dispositivos = parseInt(document.getElementById('dispositivos-range').value);
     velocidadeNecessaria += dispositivos * 10; 
     
-    // Limitar o máximo em 1000MB (1GB)
+    
     if (velocidadeNecessaria > 1000) {
       velocidadeNecessaria = 1000;
     }
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('nome-plano').textContent = planoRecomendado.nome;
     document.getElementById('preco-plano').textContent = planoRecomendado.preco;
     
-    // Formatar velocidade calculada: se for 1000MB, mostrar como "1GB"
+    
     const velocidadeTexto = velocidadeNecessaria >= 1000 ? '1GB' : velocidadeNecessaria + 'MB';
     document.getElementById('velocidade-calculada').textContent = velocidadeTexto;
     document.getElementById('dispositivos-modal').textContent = dispositivos;
@@ -290,17 +290,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!dados) { alert('Erro: Dados do plano não encontrados.'); return; }
     const mensagemCodificada = encodeURIComponent(criarMensagemWhatsApp(dados));
     const numeroWhatsApp = '557930454880';
-    const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemCodificada}`;
+    const urlWhatsApp = `https:
     window.open(urlWhatsApp, '_blank');
     fecharModal();
   }
 
-  // Tornar funções globais para uso no HTML
+  
   window.descobrirPlanoIdeal = descobrirPlanoIdeal;
   window.fecharModal = fecharModal;
   window.contratarPlanoWhatsApp = contratarPlanoWhatsApp;
 
-  // Event listeners
+  
   checkboxes.forEach((cb, index) => {
     console.log(`Adicionando listener para checkbox ${index}`);
     cb.addEventListener('change', function() {

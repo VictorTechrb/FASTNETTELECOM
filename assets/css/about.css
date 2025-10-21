@@ -1,11 +1,11 @@
-/* Correção específica para logo na navbar em páginas de subpasta */
+
 #logo-img {
   content: url('../images/fastbranco.webp');
   max-height: 40px;
   width: auto;
 }
 
-/* Fallback para caso a correção JS não funcione */
+
 .navbar .logo img {
   content: url('../images/fastbranco.webp') !important;
 }

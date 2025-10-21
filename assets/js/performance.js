@@ -78,9 +78,10 @@ function preloadCriticalResources() {
 
 
 async function loadComponentsAsync() {
-  
+  console.log('🔄 Carregando componentes (navbar e footer)...');
   const isInSubfolder = window.location.pathname.includes('/pages/');
   const basePath = isInSubfolder ? '..' : '.';
+  console.log('📁 Base path:', basePath, '| Is subfolder:', isInSubfolder);
   
   const components = [
     { 
@@ -97,13 +98,14 @@ async function loadComponentsAsync() {
 
   const loadPromises = components.map(async (component) => {
     try {
+      console.log(`📥 Carregando: ${component.url}`);
       const response = await fetch(component.url);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const html = await response.text();
       const element = document.querySelector(component.selector);
       if (element) {
         element.innerHTML = html;
-        
+        console.log(`✅ ${component.selector} carregado com sucesso!`);
         
         if (component.selector === '#navbar-placeholder') {
           const logoImg = document.getElementById('logo-img');
@@ -115,13 +117,13 @@ async function loadComponentsAsync() {
           setupNavbarListeners();
         }
 
-        // Ajustes pós-carregamento do rodapé
+        
         if (component.selector === '#footer-placeholder') {
           const isInSubfolderLocal = window.location.pathname.includes('/pages/');
           const basePathLocal = isInSubfolderLocal ? '..' : '.';
           const footerRoot = document.querySelector('#footer-placeholder');
 
-          // Corrigir logos no rodapé (empresa e desenvolvedor)
+          
           const companyLogo = footerRoot?.querySelector('.footer-logo img');
           if (companyLogo) {
             companyLogo.src = `${basePathLocal}/assets/images/fastbranco.webp`;
@@ -131,7 +133,7 @@ async function loadComponentsAsync() {
             devLogo.src = `${basePathLocal}/assets/images/victortech-logo.webp`;
           }
 
-          // Ajustar links internos "pages/..." quando já estamos em /pages/
+          
           const internalLinks = footerRoot?.querySelectorAll('a[href^="pages/"]') || [];
           internalLinks.forEach(a => {
             const href = a.getAttribute('href');

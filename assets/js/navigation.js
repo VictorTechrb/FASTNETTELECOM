@@ -1,12 +1,12 @@
-// Sistema de navegação universal para páginas diretas
+
 (function() {
     'use strict';
     
-    // Detectar se estamos em uma subpasta
+    
     const isInSubfolder = window.location.pathname.includes('/pages/');
     const basePath = isInSubfolder ? '..' : '.';
     
-    // Função para incluir HTML
+    
     function includeHTML() {
         const elements = document.querySelectorAll('[data-include]');
         const promises = [];
@@ -33,27 +33,27 @@
             results.forEach(result => {
                 if (!result) return;
                 if (result.file.includes('navbar.html')) {
-                    // Aguardar um momento para o DOM se atualizar
+                    
                     setTimeout(() => {
                         setupPageNavigation();
                     }, 100);
                 }
                 if (result.file.includes('footer.html')) {
-                    // Corrigir caminhos do rodapé quando incluído por data-include
+                    
                     adjustFooter(result.element);
                 }
             });
         });
     }
     
-    // Configurar navegação para páginas diretas
+    
     function setupPageNavigation() {
-        // Corrigir caminhos das imagens na navbar
+        
         const logoImg = document.getElementById('logo-img');
         if (logoImg) {
             console.log('Logo encontrada, caminho atual:', logoImg.src);
             
-            // Se estamos em subpasta e o caminho ainda aponta para ./assets/, corrigir
+            
             if (isInSubfolder && (logoImg.src.includes('./assets/') || logoImg.getAttribute('src').includes('./assets/'))) {
                 const newSrc = basePath + '/assets/images/fastbranco.webp';
                 logoImg.src = newSrc;
@@ -94,7 +94,7 @@
         });
     }
 
-    // Ajusta imagens e links do rodapé para caminhos relativos corretos
+    
     function adjustFooter(rootEl) {
         try {
             const base = isInSubfolder ? '..' : '.';
@@ -112,7 +112,7 @@
                 devLogo.setAttribute('src', `${base}/assets/images/victortech-logo.webp`);
             }
 
-            // Normaliza links internos quando já estamos em /pages/
+            
             if (isInSubfolder) {
                 footerRoot.querySelectorAll('a[href^="pages/"]').forEach(a => {
                     const href = a.getAttribute('href');
@@ -124,7 +124,7 @@
         }
     }
     
-    // Função para carregar componentes via placeholders (compatibilidade com sistema antigo)
+    
     function loadPlaceholders() {
         const placeholders = [
             { id: 'navbar-placeholder', file: basePath + '/includes/navbar.html' },
@@ -139,7 +139,7 @@
                     .then(data => {
                         element.innerHTML = data;
                         if (id === 'navbar-placeholder') {
-                            // Aguardar um momento para o DOM se atualizar
+                            
                             setTimeout(() => {
                                 setupPageNavigation();
                             }, 100);
@@ -153,34 +153,34 @@
         });
     }
     
-    // Inicializar quando DOM estiver pronto
+    
     document.addEventListener('DOMContentLoaded', function() {
         console.log('Iniciando sistema de navegação universal...');
         
-        // Carregar includes via data-include
+        
         includeHTML();
         
-        // Carregar placeholders (para compatibilidade)
+        
         loadPlaceholders();
         
-        // Verificar logo após um pequeno delay para garantir que foi carregada
+        
         setTimeout(function() {
             const logoImg = document.getElementById('logo-img');
             if (logoImg) {
                 setupPageNavigation();
             } else {
-                // Se ainda não encontrou, tentar novamente
+                
                 setTimeout(forceLogoFix, 1000);
             }
         }, 500);
         
-        // Verificação adicional para garantir que a logo seja corrigida
+        
         setTimeout(forceLogoFix, 2000);
         
         console.log('Sistema de navegação carregado para:', isInSubfolder ? 'subpasta' : 'raiz');
     });
     
-    // Função para forçar correção da logo (fallback)
+    
     function forceLogoFix() {
         const logoImg = document.getElementById('logo-img');
         if (logoImg) {
@@ -188,10 +188,10 @@
             let newSrc;
             
             if (isInSubfolder) {
-                // Para páginas em subpasta, usar ../assets/
+                
                 newSrc = '../assets/images/fastbranco.webp';
             } else {
-                // Para página raiz, usar ./assets/
+                
                 newSrc = './assets/images/fastbranco.webp';
             }
             
@@ -205,7 +205,7 @@
         return false;
     }
     
-    // Expor funções globalmente se necessário
+    
     window.FastnetNavigation = {
         includeHTML,
         setupPageNavigation,

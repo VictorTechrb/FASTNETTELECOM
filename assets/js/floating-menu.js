@@ -130,7 +130,7 @@
       if (botao.classList.contains('instagram')) {
         botao.addEventListener('click', function (e) {
           e.preventDefault();
-          window.open('https://www.instagram.com/soufastnet', '_blank');
+          window.open('https:
           fecharMenu();
         });
       }
@@ -256,7 +256,7 @@
         break;
     }
 
-    const url = `https://wa.me/${WHATSAPP_CONFIG.numero}?text=${encodeURIComponent(mensagem)}`;
+    const url = `https:
 
     console.log(`Abrindo WhatsApp (${tipo}):`, url);
 
