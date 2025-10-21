@@ -14,47 +14,57 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%c🔧 Execute testarLimites() para teste automatizado', 'background: #28a745; color: white; padding: 5px; border-radius: 3px;');
 });
 
+// Compatibilidade: função esperada por integrações antigas
+function manipularSelecaoAlacard(categoria, nomePlano) {
+    try {
+        abrirModalApps(categoria, nomePlano);
+    } catch (e) {
+        console.error('manipularSelecaoAlacard falhou:', e);
+    }
+}
+window.manipularSelecaoAlacard = manipularSelecaoAlacard;
+
 
 
 const appsData = {
-    'standard': [
-        { id: 'std_1', name: 'SKY+ Light', icon: 'https:
-        { id: 'std_2', name: 'iLooke', icon: 'https:
-        { id: 'std_3', name: 'PlayKids+', icon: 'https:
-        { id: 'std_4', name: 'Kaspersky I', icon: 'https:
-        { id: 'std_5', name: 'ExitLag', icon: 'https:
-        { id: 'std_6', name: 'KiddlePass', icon: 'https:
-        { id: 'std_7', name: 'Hub Vantagens', icon: 'https:
-        { id: 'std_8', name: 'UBookPlus', icon: 'https:
-        { id: 'std_9', name: 'SocialComics', icon: 'https:
-        { id: 'std_10', name: 'Estuda+', icon: 'https:
-        { id: 'std_11', name: 'Playlist', icon: 'https:
-        { id: 'std_12', name: '+QNutri', icon: 'https:
-        { id: 'std_13', name: 'Hube Revistas', icon: 'https:
-        { id: 'std_14', name: 'Fluid', icon: 'https:
-        { id: 'std_15', name: 'CurtaON', icon: 'https:
-        { id: 'std_16', name: 'DocWay', icon: 'https:
-        { id: 'std_17', name: 'PlayKids', icon: 'https:
-        { id: 'std_18', name: 'KiddlePass Plus', icon: 'https:
+    standard: [
+        { id: 'std_1', name: 'SKY+ Light', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem6-qr08k11b1vq6b8ocsnx64h0m4fiobudf2jx7lknz68.png' },
+        { id: 'std_2', name: 'iLooke', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Design-sem-nome-1-r5utkbxpzwdc1hci9xyizagel2upex9s9um4x657sk.png' },
+        { id: 'std_3', name: 'PlayKids+', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Captura_de_tela_2025-04-07_134116-removebg-preview-r40m7bz4wde4dh9pelj95rkepsmtxjxk55ltfp3d1s.png' },
+        { id: 'std_4', name: 'Kaspersky I', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem333-qqwwslxdbrpv8h95gj2ctxzzufyh79c2n099q391ao.png' },
+        { id: 'std_5', name: 'ExitLag', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/image-2-r7hzti30166nf78cxv8wnxqwkr9qlan4gto3pbarps.png' },
+        { id: 'std_6', name: 'KiddlePass', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Design-sem-nome-r5wmer218i0jxwgzwibwxph5luskxjr9k5mz3avkqc.png' },
+        { id: 'std_7', name: 'Hub Vantagens', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem5-qr08i1lkmh0dsvk4dt1iuz1kz5as2uhtgqcb4jlwb4.png' },
+        { id: 'std_8', name: 'UBookPlus', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Ubook-Plus-qqmkqahb4lwniz8xv9fikgca38ugentkrae045513k.png' },
+        { id: 'std_9', name: 'SocialComics', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/SocialComics-qqmkkb89njpzo9xls6dy7gnq20befz31lozt7s06og.png' },
+        { id: 'std_10', name: 'Estuda+', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem2-qpa2ajupfzcto55487r1lt6g0b865o1v3w1nmmnai4.png' },
+        { id: 'std_11', name: 'Playlist', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/icon-playlist-qpuk0ao16qsad7co3c5yd5wkk3wjuls21p9yms9fbk.png' },
+        { id: 'std_12', name: '+QNutri', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/QNutri-1-r0h4wx4k6hbeh6f6j9c8mjp8vbfzi5609qjdys5dxs.png' },
+        { id: 'std_13', name: 'Hube Revistas', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/LOGO-HUBE-REVISTAS-qqwwnnc198xdykgkfdv8o72ez8eqkrn2mgb0jilu4w.png' },
+        { id: 'std_14', name: 'Fluid', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/fluid-qqmkvdru5avkexup4ynrko35xdr13n18ghlop3l9e8.png' },
+        { id: 'std_15', name: 'CurtaON', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/CurtaOn-1-r0h4x7gs9npk0w05uvt4vz3bek10utb1z5pq8tq21c.png' },
+        { id: 'std_16', name: 'DocWay', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/logo-qqkql3w1vq8w0y1sazdb2c4z5de6y4ou1iyjffqrps.png' },
+        { id: 'std_17', name: 'PlayKids', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Captura_de_tela_2025-04-07_134116-removebg-preview-r40m7bz4wde4dh9pelj95rkepsmtxjxk55ltfp3d1s.png' },
+        { id: 'std_18', name: 'KiddlePass Plus', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Design-sem-nome-r5wmer218i0jxwgzwibwxph5luskxjr9k5mz3avkqc.png' },
     ],
-    'advanced': [
-        { id: 'adv_1', name: 'SKY+ Light e Globo', icon: 'https:
-        { id: 'adv_2', name: 'Deezer', icon: 'https:
-        { id: 'adv_3', name: 'KiddlePass', icon: 'https:
-        { id: 'adv_4', name: 'Kaspersky III', icon: 'https:
-        { id: 'adv_5', name: 'HotGo', icon: 'https:
-        { id: 'adv_6', name: 'CurtaOn', icon: 'https:
-        { id: 'adv_7', name: 'O Jornalista', icon: 'https:
-        { id: 'adv_8', name: 'DocWay', icon: 'https:
+    advanced: [
+        { id: 'adv_1', name: 'SKY+ Light e Globo', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem99-qr08s5d4pa8keyyll4pq7yo5dxln5l7ssn3sxbv5fo.png' },
+        { id: 'adv_2', name: 'Deezer', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem3-qr08e9az3htt1f23ho4mbffqu9yk2qgqlzqwjf7zdc.png' },
+        { id: 'adv_3', name: 'KiddlePass', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Design-sem-nome-r5wmer218i0jxwgzwibwxph5luskxjr9k5mz3avkqc.png' },
+        { id: 'adv_4', name: 'Kaspersky III', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem333-qqwwslxdbrpv8h95gj2ctxzzufyh79c2n099q391ao.png' },
+        { id: 'adv_5', name: 'HotGo', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem4-qr08g4zcrkeg9cbsihdraycxm0ozgxxevapv3cfmxc.png' },
+        { id: 'adv_6', name: 'CurtaOn', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/CurtaOn-1-r0h4x7gs9npk0w05uvt4vz3bek10utb1z5pq8tq21c.png' },
+        { id: 'adv_7', name: 'O Jornalista', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/icon-o-jornalista-qpt1ot7f4pvgxjswr2h43mgise8of8n0iy6ydfofyo.png' },
+        { id: 'adv_8', name: 'DocWay', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/logo-qqkql3w1vq8w0y1sazdb2c4z5de6y4ou1iyjffqrps.png' },
     ],
-    'premium': [
-        { id: 'pre_1', name: 'Disney+', icon: 'https:
-        { id: 'pre_2', name: 'Max', icon: 'https:
-        { id: 'pre_3', name: 'NBA', icon: 'https:
-        { id: 'pre_4', name: 'SmartContent', icon: 'https:
-        { id: 'pre_5', name: 'Kaspersky Plus', icon: 'https:
-        { id: 'pre_6', name: 'QueimadiÁria', icon: 'https:
-        { id: 'pre_7', name: 'Zen', icon: 'https:
+    premium: [
+        { id: 'pre_1', name: 'Disney+', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Disney-r0g001wr97l5z37q1xf8qjn755wvxj7m1qwi5wbg0m.jpeg' },
+        { id: 'pre_2', name: 'Max', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Captura_de_tela_2025-04-07_133811-removebg-preview-r40mm6tax3q9vlotnipz2iloq1eolbwtuot3i52cpc.png' },
+        { id: 'pre_3', name: 'NBA', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/nba-qqml4jp6s5f7m2jgmf9tdutyfmkv5ef0pul45802q8.png' },
+        { id: 'pre_4', name: 'SmartContent', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem666-qqwwynzxdc0e20ge35bsweyxnu3mt1dsszlx2a9p74.png' },
+        { id: 'pre_5', name: 'Kaspersky Plus', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem333-qqwwslxdbrpv8h95gj2ctxzzufyh79c2n099q391ao.png' },
+        { id: 'pre_6', name: 'QueimadiÁria', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Imagem5555-qqwwwzu97xq1eyvrufbogu5fn6c54eqz8puuckqw9c.png' },
+        { id: 'pre_7', name: 'Zen', icon: 'https://comologar.com.br/wp-content/uploads/elementor/thumbs/Icon-Zen-SVG-_2_-qogeb5ojzdngpkxxg0bwehfn1nyh3uvvo50kem113k.png' },
     ]
 };
 
@@ -294,9 +304,11 @@ function renderizarAppsNoModal(categoria) {
         
         const isSelected = selectedApps.some(selectedApp => selectedApp.id === app.id);
         
+        const placeholderIcon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70'><rect width='70' height='70' fill='%23eeeeee'/></svg>";
+        const iconSrc = app.icon ? app.icon : placeholderIcon;
         appCard.innerHTML = `
-            <div class="app-icon">
-                <img src="${app.icon}" alt="${app.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=&quot;http:
+            <div class="app-icon-wrapper">
+                <img src="${iconSrc}" alt="Ícone do aplicativo ${app.name}" class="app-icon">
             </div>
             <div class="app-name">${app.name}</div>
             <div class="app-price">R$ ${PRECOS_ALACARDS[categoria].toFixed(2)}</div>
@@ -939,7 +951,7 @@ function contratarPlano(tipoPlano) {
     mensagem += ` *Gostaria de mais informações e contratar este plano!*`;
 
     const mensagemCodificada = encodeURIComponent(mensagem);
-    const whatsappUrl = `https:
+    const whatsappUrl = `https://wa.me/557930454880?text=${mensagemCodificada}`;
     window.open(whatsappUrl, '_blank');
 
     const botaoContratar = planoCard.querySelector('.btn-contratar');
@@ -1209,7 +1221,7 @@ function contractSelectedPlan() {
     mensagem += `📞 *Gostaria de mais informações e fechar este negócio!*`;
     
     const mensagemCodificada = encodeURIComponent(mensagem);
-    const whatsappUrl = `https:
+    const whatsappUrl = `https://wa.me/557930454880?text=${mensagemCodificada}`;
     window.open(whatsappUrl, '_blank');
     
     

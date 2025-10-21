@@ -211,8 +211,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
-    const dispositivos = parseInt(document.getElementById('dispositivos-range').value);
-    velocidadeNecessaria += dispositivos * 10; 
+  const dispositivos = parseInt(document.getElementById('dispositivos-range').value, 10);
+  velocidadeNecessaria += dispositivos * mbpsPorDispositivo; 
     
     
     if (velocidadeNecessaria > 1000) {
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!dados) { alert('Erro: Dados do plano não encontrados.'); return; }
     const mensagemCodificada = encodeURIComponent(criarMensagemWhatsApp(dados));
     const numeroWhatsApp = '557930454880';
-    const urlWhatsApp = `https:
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
     window.open(urlWhatsApp, '_blank');
     fecharModal();
   }
@@ -326,5 +326,8 @@ document.addEventListener('DOMContentLoaded', function() {
       btnDescobrir.style.cursor = 'not-allowed';
     }
   }, 100);
+
+  // Compatibilidade: expõe um alias para calcularVelocidadeIdeal
+  window.calcularVelocidadeIdeal = atualizarSimulador;
 })();
 });
